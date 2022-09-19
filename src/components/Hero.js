@@ -1,3 +1,4 @@
+import theme from "../../styles/theme"
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
         .heroBox{
           width: 100%;
           height: 65vh;
-          background-color: red;
+          background-color: ${theme.colors.white};
         }
       `}
       </style>

@@ -8,6 +8,7 @@ const theme = {
     secondary: '#092E37',
     lightSecondary: '#4ABAD9',
     third: '#EC1F3E',
+    midThird: '#EB5757',
     lighThird: '#FF798B',
     accent: '#EBB516',
     lightAccent: '#FCE39F'
