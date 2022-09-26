@@ -36,6 +36,7 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             font-size: 11px;
             line-height: 1rem;
             transition: 0.7s;
+            margin-bottom: 30px;
 
 
             &:hover{

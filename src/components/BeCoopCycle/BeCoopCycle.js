@@ -12,7 +12,7 @@ export default function BeCoopCycle() {
 
         <div className="cardsBox">
           {
-            cardsInfo.map(e => <Card title={e.title} intro={e.intro} info={e.info} img={e.img} key={e.title + "key"} />)
+            cardsInfo.map(e => <Card title={e.title} intro={e.intro} info={e.info} img={e.img} items={e.items} key={e.title + "key"} />)
           }
 
         </div>
@@ -42,7 +42,7 @@ export default function BeCoopCycle() {
               width: 100%;
               display: flex;
               flex-direction: row;
-              align-items: center;
+              align-items: flex-start;
               justify-content: center;
               gap: 40px;
               margin-top: 30px;
