@@ -113,7 +113,7 @@ export default function Footer() {
         {`
         .footerBox{
           position: relative;
-          z-index: 1;
+          z-index: 20;
           display: flex;
           flex-direction: row;
           justify-content: center;

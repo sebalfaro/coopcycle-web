@@ -107,6 +107,7 @@ export default function SideBar() {
             bottom:0;
             overflow-y: hidden;
             transition: 0.5s;
+            z-index: 10;
           }
           .barClose{
             background-color: transparent;
@@ -114,11 +115,12 @@ export default function SideBar() {
             width: 75px;
           }
           .barOpen{
+            position: fixed;
             display: flex;
             flex-direction: row;
             background-color: ${theme.colors.secondary};
             width: 100%;
-
+            z-index: 30;
           }
           .menuBtnBoxClose{
             margin-left: 22px;
@@ -151,15 +153,15 @@ export default function SideBar() {
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: 31%;            
+            width: 40%;            
             color: ${theme.colors.white};
 
             .menuBtnBox{
-              margin-left: 35%;
+              padding-left: 30%;
               margin-top: 40px;
             }
             .column1Links{
-              padding-left: 35%;
+              padding-left: 30%;
               margin-top: 82px;
               width: fit-content;
               display: flex;
@@ -167,14 +169,7 @@ export default function SideBar() {
               font-size: 1rem;
               gap: 38px;
               
-              a {
-                font-family: 'Passion One', sans-serif;
-                font-weight: bolder;
-                transition: 0.2s;
-                &:hover {
-                  color: ${theme.colors.lightSecondary};
-                }
-              }
+
             }
             
           }
@@ -183,7 +178,7 @@ export default function SideBar() {
             flex-direction: column;
             align-items: flex-end;
             height: 100%;
-            width: 63.3%;
+            width: 55%;
 
             .socialMediaBoxOpen{
               width: fit-content;

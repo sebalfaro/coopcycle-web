@@ -6,7 +6,8 @@ export default function MenuIcon({ open, clickHandler }) {
         ? (
           <div className={'menuIconBox'} onClick={clickHandler}>
 
-            <div className={'iconMenu' + ' ' + (open ? 'close' : 'open')} onClick={clickHandler}>
+            {/* <div className={'iconMenu' + ' ' + (open ? 'close' : 'open')} onClick={clickHandler}> */}
+            <div className={(open ? 'iconMenu' + ' ' + 'close' : 'iconMenu' + ' ' +  'open')} onClick={clickHandler}>
               <div className="margin">
                 <svg width="2" height="18" viewBox="0 0 2 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="1" y1="0.505859" x2="0.999999" y2="17.2905" stroke="#EC1F3E" stroke-width="2" />

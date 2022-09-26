@@ -16,9 +16,9 @@ export default function BarLink({ title = '', link = '#', number, clickHandler }
           priority
         />
       </div>
-      <div onClick={clickHandler}>
+      <div className="textBox" onClick={clickHandler}>
         <Link href={link}>
-          <a><h2>{title}</h2></a>
+          <a><h1>{title}</h1></a>
         </Link>
       </div>
     </div>
@@ -29,11 +29,14 @@ export default function BarLink({ title = '', link = '#', number, clickHandler }
           display: flex; 
           flex-direction: row;
           align-items: center;
+          transition: 0.7s;
           gap: 15px;
 
-          a {
+          .textBox {
             font-family: 'Passion One', sans-serif;
-            font-weight: bolder;
+            line-height: 44px;
+            font-weight: 900;
+            font-size: 1.5rem;
             transition: 0.5s;
             &:hover {
               color: ${theme.colors.third};

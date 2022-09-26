@@ -24,6 +24,9 @@ const theme = {
     space: 3.2,
     pageWidth: 1440,
    },
+   fontFamily: {
+    secondary: "Passion One",
+   }
 }
 
 export default theme;

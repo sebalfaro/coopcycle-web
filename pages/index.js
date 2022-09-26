@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import AboutUs from '../src/components/AboutUs/AboutUs'
+import BeCoopCycle from '../src/components/BeCoopCycle/BeCoopCycle'
 import CoopcycleNet from '../src/components/CoopcycleNet/CoopcycleNet'
 import Footer from '../src/components/Footer'
 import Hero from '../src/components/Hero'
@@ -19,6 +21,8 @@ export default function Home() {
         <main >
           <SideBar />
           <Hero />
+          <AboutUs />
+          <BeCoopCycle />
           <CoopcycleNet />
         </main>
         <Footer />
