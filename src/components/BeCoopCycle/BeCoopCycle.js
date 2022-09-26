@@ -18,7 +18,7 @@ export default function BeCoopCycle() {
         </div>
 
         <p> <b>¡Si querés ser parte de Coopcycle,<br /> no dudes en comunicarte con nosotras/os!</b> </p>
-        <Button text="¡Sumate!" />
+        <Button text="¡Sumate!" type='center' />
       </section>
       <style jsx>
         {`
@@ -37,6 +37,7 @@ export default function BeCoopCycle() {
             }
             p{
               text-align: center;
+              padding-bottom: 22px;
             }
             .cardsBox{
               width: 100%;

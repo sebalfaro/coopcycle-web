@@ -46,6 +46,21 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
               border: none;
             }
           }
+          .center{
+            width: 196px;
+            height: 38px;
+            background-color: ${theme.colors.third};
+            border: none;
+            border-radius: 90px;
+            transition: 0.7s;
+
+            &:hover{
+              cursor: pointer;
+              background-color: ${theme.colors.lighThird};
+              color: ${theme.colors.secondary};
+              border: none;
+            }
+          }
         `}
       </style>
     </>
