@@ -127,7 +127,8 @@ export default function Card({ title, intro, info, img, items }) {
               }
             }
             .contentBoxOpen{
-              height: 541px;
+              height: 700px;
+              transition: height 0.25s ease-in;
             }
           }
         `}

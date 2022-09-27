@@ -52,13 +52,14 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             background-color: ${theme.colors.third};
             border: none;
             border-radius: 90px;
-            transition: 0.7s;
+            transition: 0.3s ease-out;
 
             &:hover{
               cursor: pointer;
-              background-color: ${theme.colors.lighThird};
-              color: ${theme.colors.secondary};
+              background-color: transparent;
+              color: ${theme.colors.third};
               border: none;
+              border: 1px solid ${theme.colors.third};
             }
           }
         `}

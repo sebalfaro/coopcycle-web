@@ -27,7 +27,7 @@ export default function BeCoopCycle() {
             flex-direction: column;
             align-items: center;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
 
             h1{
               font-weight: 900;
