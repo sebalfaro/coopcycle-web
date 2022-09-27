@@ -85,7 +85,7 @@ export default function InfoCard({ number, title, content }) {
             height: 130px;
 
             .numberBox{
-              border-left: 1px solid ${theme.colors.lightSecondary};
+              border-left: 1.6px solid ${theme.colors.lightSecondary};
               transition: 0.2s;
               color: ${theme.colors.lightSecondary};
             }

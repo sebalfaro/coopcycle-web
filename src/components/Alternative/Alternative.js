@@ -70,7 +70,6 @@ export default function Alternative() {
                 display: flex; 
                 flex-direction: column;
                 width: 100%;
-                border-left: 1px solid ${theme.colors.darkGray};
               }
             }
           }

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import WhoWeAre from '../src/components/WhoWeAre/WhoWeAre'
 import AboutUs from '../src/components/AboutUs/AboutUs'
 import Alternative from '../src/components/Alternative/Alternative'
 import BeCoopCycle from '../src/components/BeCoopCycle/BeCoopCycle'
-import CoopcycleNet from '../src/components/CoopcycleNet/CoopcycleNet'
 import Footer from '../src/components/Footer'
 import Hero from '../src/components/Hero'
 import SideBar from '../src/components/SideBar'
@@ -25,7 +25,8 @@ export default function Home() {
           <AboutUs />
           <BeCoopCycle />
           <Alternative />
-          <CoopcycleNet />
+          <WhoWeAre />
+
         </main>
         <Footer />
       </div>
