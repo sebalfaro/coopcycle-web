@@ -8,6 +8,7 @@ const theme = {
     secondary: '#092E37',
     lightSecondary: '#4ABAD9',
     third: '#EC1F3E',
+    midThird: '#EB5757',
     lighThird: '#FF798B',
     accent: '#EBB516',
     lightAccent: '#FCE39F'
@@ -23,6 +24,9 @@ const theme = {
     space: 3.2,
     pageWidth: 1440,
    },
+   fontFamily: {
+    secondary: "Passion One",
+   }
 }
 
 export default theme;

@@ -11,15 +11,20 @@ export default function Footer() {
     <>
       <footer className="footerBox">
         <div className="logoBox">
-          <Image
-            src={logo}
-            alt="Logo Coopcycle"
-            width={258}
-            height={51}
-            layout="fill"
-            objectFit="contain"
-            priority
-          />
+          <Link href="#">
+            <a>
+              <Image
+                src={logo}
+                alt="Logo Coopcycle"
+                width={258}
+                height={51}
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </a>
+          </Link>
+
         </div>
         <div className="linksBox">
 
@@ -32,13 +37,14 @@ export default function Footer() {
             </div>
             <div className="socialMediaBox">
               <h4>¡Seguinos!</h4>
-              <div className="socialMediaBox">
+
+              <div className="socialMediaIconsBox">
                 <Link href="#">
                   <a>
-                    <div className="socialMediaIcon" style={{position: 'relative'}}>
+                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
                       <Image
                         src={fb}
-                        alt="facebook"
+                        alt="facebook-icon"
                         width={14}
                         height={14}
                         layout="fill"
@@ -48,10 +54,41 @@ export default function Footer() {
                     </div>
                   </a>
                 </Link>
-
+                <Link href="#">
+                  <a>
+                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
+                      <Image
+                        src={tw}
+                        alt="twitter-icon"
+                        width={14}
+                        height={14}
+                        layout="fill"
+                        objectFit="contain"
+                        priority
+                      />
+                    </div>
+                  </a>
+                </Link>
+                <Link href="#">
+                  <a>
+                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
+                      <Image
+                        src={ig}
+                        alt="instagram-icon"
+                        width={14}
+                        height={14}
+                        layout="fill"
+                        objectFit="contain"
+                        priority
+                      />
+                    </div>
+                  </a>
+                </Link>
               </div>
+
             </div>
           </div>
+          <hr />
 
           <nav className="navBox">
             <Link href="#">
@@ -75,13 +112,15 @@ export default function Footer() {
       <style jsx>
         {`
         .footerBox{
+          position: relative;
+          z-index: 20;
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
           width: 100%;
           height: 224px;
-          gap: 82px;
+          gap: 5.5%;
           background-color: ${theme.colors.third};
         }
         .logoBox{
@@ -89,11 +128,18 @@ export default function Footer() {
           width: 268px;
           height: 100px;
         }
+
         .linksBox {
-          display: flex;
+          display: flex; 
           flex-direction: column;
           width: 550px;
           height: 75px;
+
+          hr {
+            background-color: ${theme.colors.midThird};
+            border: 1px solid ${theme.colors.midThird};
+            margin: 1rem 0;
+          }
         }
         .contactBox{
           display: flex;
@@ -102,16 +148,36 @@ export default function Footer() {
           justify-content: space-between;
           width: 100%;
           height: 48px;
-          border-bottom: 1px solid ${theme.colors.lighThird};
+
         }
 
         .mailBox{
           height: 100%;
           width: fit-content;
+          color: ${theme.colors.secondary};
           a{
             font-size: 1.3rem;
             font-weight: 700;
             color: ${theme.colors.secondary};
+          }
+        }
+
+        .socialMediaBox{
+          width: 120px;
+          height: 50px;
+
+          .socialMediaIconsBox{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            width: 100%;
+
+            .socialMediaIcon{
+              position: relative;
+              height: 40px;
+              width: 20px;
+            }
           }
         }
 

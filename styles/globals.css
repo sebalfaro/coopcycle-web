@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Space Grotesk;
+  font-family: "Space Grotesk";
 }
 
 a {
@@ -14,6 +14,9 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+h1{
+  font-family: Passion One;
 }
 
 @media (prefers-color-scheme: dark) {
