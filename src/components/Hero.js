@@ -1,5 +1,7 @@
 import Image from "next/image"
 import logo from "../../common/assets/images/LogoCoopcycle.svg"
+import Lottie from "lottie-react";
+import img1 from '../../common/assets/images/svgImages/Hero completo_V1.json'
 import title from "../../common/assets/images/heroTitle.svg"
 import theme from "../../styles/theme"
 
@@ -22,17 +24,6 @@ export default function Hero() {
         </div>
         <div className="titleBox">
           <div className="title">
-            <Image
-              src={title}
-              alt={`number-icon`}
-              width={15}
-              height={15}
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
-          </div>
-          <div className="imageBox">
             {/* <Image
               src={title}
               alt={`number-icon`}
@@ -42,6 +33,7 @@ export default function Hero() {
               objectFit="contain"
               priority
             /> */}
+            <Lottie loop={true} animationData={img1} style={{ height: '100%' }} />
           </div>
         </div>
       </section>
@@ -70,15 +62,8 @@ export default function Hero() {
 
             .title{
               position: relative;
-              width: 425.74px;
-              height: 90px;
-            }
-            .imageBox{
-              position: relative;
-              width: 450px;
-              height: 450px;
-              background-color: blue;
-              z-index: -1; 
+              width: 100%;
+              height: 500px;
             }
           }
 
