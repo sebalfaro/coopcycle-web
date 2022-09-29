@@ -1,16 +1,22 @@
+import { useState } from "react";
 import theme from "../../../styles/theme";
 
 export default function Button({ text = "", onClickHandler, type = 'right', value }) {
+
+  const [selected, setSelected] = useState(false);
 
   const clickHandler = (e) => {
     if (type === 'open') {
       onClickHandler(!value)
     }
+    if (type === 'centerSecondary') {
+      setSelected(!value)
+    }
   }
 
   return (
     <>
-      <button className={type} onClick={clickHandler} >{text}</button>
+      <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >{text}</button>
       <style jsx>
         {`
           .right{
@@ -61,6 +67,26 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
               border: none;
               border: 1px solid ${theme.colors.third};
             }
+          }
+          .centerSecondary{
+            width: auto;
+            padding: 0 18px;
+            height: 38px;
+            background-color: transparent;
+            border: 1px solid ${theme.colors.lightSecondary};
+            border-radius: 90px;
+            transition: 0.3s ease-out;
+            color: ${theme.colors.secondary};
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 18px;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+          .selected{
+            background-color: ${theme.colors.lightSecondary};
           }
         `}
       </style>

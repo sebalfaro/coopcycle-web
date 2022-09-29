@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { infoCardsAlternative } from "../../../common/assets/data/infoCardsAlternative";
-import character2 from '../../../common/assets/images/character2.svg'
+import Lottie from "lottie-react";
+import character2 from '../../../common/assets/images/svgImages/Animacion_Derechos.json'
 import InfoCard from "../../../common/components/InfoCard/InfoCard";
 import theme from "../../../styles/theme";
 
@@ -9,7 +9,7 @@ export default function Alternative() {
     <>
       <section className="alternativeBox">
         <div className="imgBox">
-          <Image
+          {/* <Image
             src={character2}
             alt={`number-icon`}
             layout="fill"
@@ -17,7 +17,8 @@ export default function Alternative() {
             // height={270}
             objectFit="cover"
             priority
-          />
+          /> */}
+          <Lottie loop={true} animationData={character2} style={{height: '100%'}}/>
         </div>
         <div className="contentBox">
           <div className="titleBox">
