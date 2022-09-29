@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik'
 import CustomInput from '../../components/CustomInput/CustonInput'
-import CustomTextarea from '../CustomTextArea/CustomTextArea'
+// import CustomTextarea from '../CustomTextArea/CustomTextArea'
 import Button from '../Button/Button'
 
 export default function ContactForm() {
@@ -26,7 +26,7 @@ export default function ContactForm() {
               <div className="inputBox">
                 <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" />
                 <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' />
-                <Field name="message" as={CustomTextarea} label='Dejanos tu mensaje' placeholder="Tu mensaje" />
+                {/* <Field name="message" as={CustomTextarea} label='Dejanos tu mensaje' placeholder="Tu mensaje" /> */}
                 <Button text='Submit' />
               </div>
               <div className="submitBox">
