@@ -3,6 +3,7 @@ import Button from "../../../common/components/Button/Button";
 import Card from "../../../common/components/Card/Card";
 import { cardsInfo } from "../../../common/assets/data/cardsInfo"
 
+
 export default function BeCoopCycle() {
 
   return (
