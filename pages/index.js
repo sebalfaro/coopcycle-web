@@ -27,7 +27,7 @@ export default function Home() {
           <BeCoopCycle />
           <Alternative />
           <WhoWeAre />
-          <ContactUs />
+          {/* <ContactUs /> */}
         </main>
         <Footer />
       </div>
