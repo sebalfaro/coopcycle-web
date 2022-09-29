@@ -9,15 +9,6 @@ export default function Alternative() {
     <>
       <section className="alternativeBox">
         <div className="imgBox">
-          {/* <Image
-            src={character2}
-            alt={`number-icon`}
-            layout="fill"
-            // width={270}
-            // height={270}
-            objectFit="cover"
-            priority
-          /> */}
           <Lottie loop={true} animationData={character2} style={{height: '100%'}}/>
         </div>
         <div className="contentBox">
