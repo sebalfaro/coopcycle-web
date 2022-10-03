@@ -2,7 +2,6 @@ import Button from "../../../common/components/Button/Button";
 import Average from "./Average";
 import Lottie from "lottie-react";
 import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres.json'
-import test from '../../../common/assets/images/svgImages/Icono_Cocinero_1.json'
 
 export default function AboutUs() {
   return (

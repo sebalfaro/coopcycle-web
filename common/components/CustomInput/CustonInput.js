@@ -30,6 +30,14 @@ const CustomInputComponent = (props) => {
               border: none;
               border-bottom: 2px solid ${theme.colors.lightSecondary};
             }
+            input:-webkit-autofill {
+              background-color: transparent !important;
+              color: ${theme.colors.secondary};
+            }
+            input:autofill {
+              background-color: transparent !important;
+              color: ${theme.colors.secondary};
+            }
           }
         `}
       </style>

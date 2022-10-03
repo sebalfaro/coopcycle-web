@@ -1,6 +1,6 @@
 import theme from "../../../styles/theme"
 
-const CustomTextarea = (props) => {
+const CustomTextArea = (props) => {
 
   return (
     <>
@@ -39,4 +39,4 @@ const CustomTextarea = (props) => {
   )
 }
 
-export default CustomTextarea
+export default CustomTextArea

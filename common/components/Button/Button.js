@@ -12,6 +12,7 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
     if (type === 'centerSecondary') {
       setSelected(!value)
     }
+    
   }
 
   return (
