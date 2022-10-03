@@ -3,9 +3,9 @@ import { useState } from "react"
 import SocialMediaLink from "../../common/components/SocialMediaLink/SocialMediaLink"
 import BarLink from '../../common/components/NavLink/BarLink'
 import MenuIcon from "../../common/components/MenuIcon/MenuIcon";
-import twRed from '../../public/images/tw-red.svg'
-import fb from '../../public/images/fb-red.svg'
-import ig from '../../public/images/ig-red.svg'
+import tw from '../../common/assets/images/tw-blue.svg'
+import igBlue from '../../common/assets/images/ig-blue.svg'
+import fb from '../../common/assets/images/fb-blue.svg'
 import fbIcon from '../../public/images/fb-icon.svg'
 import twIcon from '../../public/images/tw-icon.svg'
 import igIcon from '../../public/images/ig-icon.svg'
@@ -14,7 +14,7 @@ import two from '../../common/assets/images/numbers/02.svg'
 import three from '../../common/assets/images/numbers/03.svg'
 import four from '../../common/assets/images/numbers/04.svg'
 import five from '../../common/assets/images/numbers/05.svg'
-import line from '../../public/images/red-line.svg'
+import closeBtn from '../../common/assets/images/closeIcon.svg'
 import theme from "../../styles/theme"
 
 
@@ -37,8 +37,8 @@ export default function SideBar() {
                 <div className="socialMediaLinksBoxClose">
                   <div className={"socialMediaIconsBox" + ' ' + (open ? 'close' : 'open')}>
                     <SocialMediaLink icon={fb} name={'facebook'} size={'22'} />
-                    <SocialMediaLink icon={twRed} name={'twitter'} size={'22'} />
-                    <SocialMediaLink icon={ig} name={'instagram'} size={'22'} />
+                    <SocialMediaLink icon={tw} name={'twitter'} size={'22'} />
+                    <SocialMediaLink icon={igBlue} name={'instagram'} size={'22'} />
                   </div>
                 </div>
               </>
@@ -75,19 +75,14 @@ export default function SideBar() {
 
                 <div className="column3">
                   <div className="closeBtnBox">
-                    <div className="lineOpen">
-                      <Image
-                        src={line}
-                        alt={`number-icon`}
-                        width={15}
-                        height={15}
-                        layout="fill"
-                        objectFit="contain"
-                        priority
-                      />
-                    </div>
                     <div className="closeBtn" onClick={clickHandler} >
-                      <p>X</p>
+                        <Image
+                          src={closeBtn}
+                          alt={`number-icon`}
+                          layout="fill"
+                          objectFit="contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -201,15 +196,23 @@ export default function SideBar() {
           }
 
           .column3 {
+            position: relative;
             height: 100%;
-            width: fit-content;
+            width: 5%;
             border-left: 1px solid ${theme.colors.gray};
 
             .closeBtnBox{
+              position: absolute;
               display: flex;
               flex-direction: row;
               align-items: center;
-              background-color: white;
+              justify-content: center;
+              margin-top: 42px;
+              border-left: 3px solid ${theme.colors.third};
+              width: 100%;
+              height: 25px;
+              z-index: 20;
+              left: -1px;
 
               .lineOpen {
                 width: 15px;
@@ -217,6 +220,9 @@ export default function SideBar() {
                 position: relative;
               }
               .closeBtn{
+                position: relative;
+                width: 17px;
+                height: 17px;
                 margin: 0;
                 padding: 0;
                 font-size: 2rem;
