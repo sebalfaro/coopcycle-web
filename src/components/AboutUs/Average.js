@@ -7,14 +7,14 @@ export default function Average() {
       <div className="averageBox">
         <div className="contentBox">
           <div className="block">
-            <h1><CountUp start={400} end={500} duration={3} />+</h1>
+            <h1><CountUp start={400} end={500} duration={5} />+</h1>
             <p>Entregas Realizadas</p>
           </div>
 
           <div className="line"></div>
 
           <div className="block">
-            <h1><CountUp start={44900} end={45000} duration={3} />+</h1>
+            <h1><CountUp start={44900} end={45000} duration={5} />+</h1>
             <p>Trabajadores/as</p>
           </div>
         </div>

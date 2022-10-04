@@ -9,8 +9,6 @@ export default function BarLink({ title = '', link = '#', number, clickHandler }
         <Image
           src={number}
           alt={`number-icon`}
-          width={15}
-          height={15}
           layout="fill"
           objectFit="contain"
           priority

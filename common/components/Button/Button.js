@@ -1,16 +1,22 @@
 import { useState } from "react";
 import theme from "../../../styles/theme";
 
-export default function Button({ text = "", onClickHandler, type = 'right', value }) {
+export default function Button({ text = "", onClickHandler, type = 'right', value, formikProps }) {
 
   const [selected, setSelected] = useState(false);
+
+  const select = (content)=>{
+    if(content === formikProps.value ){
+
+    }
+  }
 
   const clickHandler = (e) => {
     if (type === 'open') {
       onClickHandler(!value)
     }
     if (type === 'centerSecondary') {
-      setSelected(!value)
+      setSelected(!selected)
     }
     
   }
@@ -26,9 +32,13 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             border: none;
             border-radius: 0px 20px 20px 0px;
             background-color: ${theme.colors.third};
+            transition: 0.7s;
 
             &:hover{
               cursor: pointer;
+              background-color: ${theme.colors.secondary};
+              color: ${theme.colors.white};
+              border: none;
             }
           }
           .open{

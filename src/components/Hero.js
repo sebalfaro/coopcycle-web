@@ -12,8 +12,6 @@ export default function Hero() {
             <Image
               src={logo}
               alt={`number-icon`}
-              width={15}
-              height={15}
               layout="fill"
               objectFit="contain"
               priority
@@ -33,6 +31,7 @@ export default function Hero() {
           height: 75vh;
 
           .logoBox {
+            position: relative;
             padding-top: 2.7%;
             padding-left: 3.6%;
 

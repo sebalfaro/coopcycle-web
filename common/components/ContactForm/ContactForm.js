@@ -1,10 +1,17 @@
 import { Field, Form, Formik } from 'formik'
 import CustomInput from '../../components/CustomInput/CustonInput'
-// import CustomTextArea from '../CustomTextArea/CustomTextArea'
 import CustomTexA from '../CustomTextA/CustomTextA'
 import Button from '../Button/Button'
 
 export default function ContactForm() {
+
+  const content = {
+    coop: 'Soy cooperativa',
+    delivery: 'Soy repatidor/a',
+    coom: 'Soy comerciante',
+    suport: 'Quiero apoyar esta iniciativa',
+    other: 'Otro'
+  }
 
   const data = {
     name: '',
@@ -34,14 +41,15 @@ export default function ContactForm() {
               <div className="submitBox">
                 <p>Motivo del contacto</p>
                 <div className="btnsBox">
-                  <Button text='Soy cooperativa' type='centerSecondary' />
-                  <Button text='Soy repatidor/a' type='centerSecondary' />
-                  <Button text='Soy comerciante' type='centerSecondary' />
-                  <Button text='Quiero apoyar esta iniciativa' type='centerSecondary' />
-                  <Button text='Otro' type='centerSecondary' />
+                  <Button text={content.coop} type='centerSecondary' formikProps={props} />
+                  <Button text={content.delivery} type='centerSecondary' formikProps={props} />
+                  <Button text={content.coom} type='centerSecondary' formikProps={props} />
+                  <Button text={content.suport} type='centerSecondary' formikProps={props} />
+                  <Button text={content.other} type='centerSecondary' formikProps={props} />
                 </div>
               </div>
             </div>
+            {console.log(props)}
           </Form>
         )}
       </Formik>

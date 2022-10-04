@@ -1,4 +1,4 @@
-import img1 from '../images/svgImages/Icono_Repartidor.json'
+import img1 from '../images/svgImages/Icono_Repartidor_Izq_V2.json'
 import img2 from '../images/svgImages/Icono_Cocinera_2.json'
 import img3 from '../images/svgImages/Icono_Repartidor_2.json'
 

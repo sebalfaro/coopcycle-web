@@ -16,8 +16,6 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt="Logo Coopcycle"
-                width={258}
-                height={51}
                 layout="fill"
                 objectFit="contain"
                 priority
