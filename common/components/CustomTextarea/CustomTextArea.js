@@ -6,9 +6,9 @@ const CustomTextArea = (props) => {
     <>
       <div className="textareaBox">
         <label htmlFor="my-custom-textarea">{props.label}</label>
-        <textarea name="my-custom-textarea" rows="10" cols="50" {...props}/>
+        <textarea name="my-custom-textarea" {...props}/>
       </div>
-      <style jsx>
+      {/* <style jsx>
         {`
           .textareaBox{
             display: flex;
@@ -34,7 +34,7 @@ const CustomTextArea = (props) => {
             }
           }
         `}
-      </style>
+      </style> */}
     </>
   )
 }
