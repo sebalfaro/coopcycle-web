@@ -1,22 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import theme from "../../../styles/theme";
 
 export default function Button({ text = "", onClickHandler, type = 'right', value, formikProps }) {
 
   const [selected, setSelected] = useState(false);
 
-  const select = (content)=>{
-    if(content === formikProps.value ){
-
+  const selectedOption = (content)=>{
+    if(content === formikProps.values.destinatary){
+      return
+    }
+    if(content !== formikProps.values.destinatary){
+      formikProps.setFieldValue('destinatary', text)
     }
   }
+
+  console.log(formikProps)
+
+  useEffect(() => {
+    if(value){
+      if(text === value){
+        setSelected(!selected)
+      }
+      if(text !== value){
+        setSelected(false)
+      }
+    }
+  }, [formikProps, value])
+  
 
   const clickHandler = (e) => {
     if (type === 'open') {
       onClickHandler(!value)
     }
     if (type === 'centerSecondary') {
-      setSelected(!selected)
+      selectedOption(text)
     }
     
   }

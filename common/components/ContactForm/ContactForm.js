@@ -16,7 +16,8 @@ export default function ContactForm() {
   const data = {
     name: '',
     mail: '',
-    message: ''
+    message: '',
+    destinatary: 'Soy cooperativa'
   }
 
   return (
@@ -33,7 +34,7 @@ export default function ContactForm() {
             <div className="formBox">
               <div className="inputBox">
                 <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" />
-                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail"/>
+                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail" />
                 <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' placeholder="Tu mensaje" />
                 <br />
                 <Button text='Submit' />
@@ -41,11 +42,11 @@ export default function ContactForm() {
               <div className="submitBox">
                 <p>Motivo del contacto</p>
                 <div className="btnsBox">
-                  <Button text={content.coop} type='centerSecondary' formikProps={props} />
-                  <Button text={content.delivery} type='centerSecondary' formikProps={props} />
-                  <Button text={content.coom} type='centerSecondary' formikProps={props} />
-                  <Button text={content.suport} type='centerSecondary' formikProps={props} />
-                  <Button text={content.other} type='centerSecondary' formikProps={props} />
+                  <Button text={content.coop} type='centerSecondary' formikProps={props} value={props.values.destinatary} />
+                  <Button text={content.delivery} type='centerSecondary' formikProps={props} value={props.values.destinatary} />
+                  <Button text={content.coom} type='centerSecondary' formikProps={props} value={props.values.destinatary} />
+                  <Button text={content.suport} type='centerSecondary' formikProps={props} value={props.values.destinatary} />
+                  <Button text={content.other} type='centerSecondary' formikProps={props} value={props.values.destinatary} />
                 </div>
               </div>
             </div>
