@@ -1,12 +1,19 @@
 import theme from "../../../styles/theme"
 
 const CustomInputComponent = (props) => {
+  const {errors, touched} = props.formikProps
+  const {name} = props
 
   return (
     <>
       <div className="inputBox">
         <label htmlFor="my-custom-input">{props.label}</label>
         <input className="my-custom-input" type="text" {...props} />
+        {
+          errors[name] && touched[props.name]
+            ? <div className='errorBox'><p>{props.formikProps.errors[props.name]}</p></div>
+            : null
+        }
       </div>
       <style jsx>
         {`
@@ -37,6 +44,12 @@ const CustomInputComponent = (props) => {
             input:autofill {
               background-color: transparent !important;
               color: ${theme.colors.secondary};
+            }
+            .errorBox{
+              display: block;
+              color: red;
+              padding: 0.3rem 0; 
+              font-size: 0.8rem;
             }
           }
         `}

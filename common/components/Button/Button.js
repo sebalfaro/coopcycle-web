@@ -5,16 +5,11 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
 
   const [selected, setSelected] = useState(false);
 
-  const selectedOption = (content)=>{
-    if(content === formikProps.values.destinatary){
-      return
-    }
-    if(content !== formikProps.values.destinatary){
-      formikProps.setFieldValue('destinatary', text)
+  const selectedOption = (text)=>{
+    if(text !== value){
+      formikProps.setFieldValue('sender', text)
     }
   }
-
-  console.log(formikProps)
 
   useEffect(() => {
     if(value){
@@ -25,17 +20,18 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
         setSelected(false)
       }
     }
-  }, [formikProps, value])
+  }, [value])
   
 
   const clickHandler = (e) => {
     if (type === 'open') {
+      e.preventDefault()
       onClickHandler(!value)
     }
     if (type === 'centerSecondary') {
+      e.preventDefault()
       selectedOption(text)
-    }
-    
+    }   
   }
 
   return (
@@ -115,6 +111,22 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
           }
           .selected{
             background-color: ${theme.colors.lightSecondary};
+          }
+          
+          .submit {
+            width: 225px;
+            height: 35px;
+            border: none;
+            border-radius: 0px 20px 20px 0px;
+            background-color: ${theme.colors.third};
+            transition: 0.7s;
+
+            &:hover{
+              cursor: pointer;
+              background-color: ${theme.colors.secondary};
+              color: ${theme.colors.white};
+              border: none;
+            }
           }
         `}
       </style>

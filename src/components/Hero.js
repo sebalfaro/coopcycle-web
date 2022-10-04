@@ -1,7 +1,7 @@
 import Image from "next/image"
 import logo from "../../common/assets/images/LogoCoopcycle.svg"
 import Lottie from "lottie-react";
-import img1 from '../../common/assets/images/svgImages/Hero completo_V3.json'
+import img1 from '../../common/assets/images/svgImages/Hero completo_V4.json'
 
 export default function Hero() {
   return (
