@@ -1,6 +1,6 @@
 import { infoCardsAlternative } from "../../../common/assets/data/infoCardsAlternative";
 import Lottie from "lottie-react";
-import character2 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
+import character2 from '../../../common/assets/images/svgImages/Animacion_Derechos_V2.json'
 import InfoCard from "../../../common/components/InfoCard/InfoCard";
 import theme from "../../../styles/theme";
 
