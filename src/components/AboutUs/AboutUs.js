@@ -40,13 +40,12 @@ export default function AboutUs() {
               justify-content: center;
               align-items: center;
               width: 100%;
-              height: 80%;
               gap: 50px;
 
               .imgBox {
                 position: relative;
                 width: auto;
-                height: 500px;
+                height: 600px;
               }
 
               .textBox{

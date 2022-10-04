@@ -28,7 +28,7 @@ export default function Hero() {
         {`
         .heroBox{
           width: 100%;
-          height: 75vh;
+          height: 85vh;
 
           .logoBox {
             position: relative;

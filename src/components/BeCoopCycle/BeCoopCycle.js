@@ -34,7 +34,7 @@ export default function BeCoopCycle() {
               font-weight: 900;
               font-size: 2.7rem;
               line-height: 44px;
-              padding-top: 2rem;
+              padding-top: 5rem;
             }
             p{
               text-align: center;
