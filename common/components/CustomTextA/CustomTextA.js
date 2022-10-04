@@ -1,8 +1,9 @@
 
-export default function CustomTexA (){
-  return<>
+export default function CustomTexA(props) {
+  return <>
     <div className="textABox">
-      <textarea name="" id=""></textarea>
+      <label htmlFor="my-custom-textarea">{props.label}</label>
+      <textarea name="my-custom-textarea" {...props}></textarea>
     </div>
     <style jsx>
       {`
