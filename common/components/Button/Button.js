@@ -1,16 +1,42 @@
+import { useEffect, useState } from "react";
 import theme from "../../../styles/theme";
 
-export default function Button({ text = "", onClickHandler, type = 'right', value }) {
+export default function Button({ text = "", onClickHandler, type = 'right', value, formikProps }) {
+
+  const [selected, setSelected] = useState(false);
+
+  const selectedOption = (text)=>{
+    if(text !== value){
+      formikProps.setFieldValue('sender', text)
+    }
+  }
+
+  useEffect(() => {
+    if(value){
+      if(text === value){
+        setSelected(!selected)
+      }
+      if(text !== value){
+        setSelected(false)
+      }
+    }
+  }, [value])
+  
 
   const clickHandler = (e) => {
     if (type === 'open') {
+      e.preventDefault()
       onClickHandler(!value)
     }
+    if (type === 'centerSecondary') {
+      e.preventDefault()
+      selectedOption(text)
+    }   
   }
 
   return (
     <>
-      <button className={type} onClick={clickHandler} >{text}</button>
+      <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >{text}</button>
       <style jsx>
         {`
           .right{
@@ -19,9 +45,13 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             border: none;
             border-radius: 0px 20px 20px 0px;
             background-color: ${theme.colors.third};
+            transition: 0.7s;
 
             &:hover{
               cursor: pointer;
+              background-color: ${theme.colors.secondary};
+              color: ${theme.colors.white};
+              border: none;
             }
           }
           .open{
@@ -60,6 +90,42 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
               color: ${theme.colors.third};
               border: none;
               border: 1px solid ${theme.colors.third};
+            }
+          }
+          .centerSecondary{
+            width: auto;
+            padding: 0 18px;
+            height: 38px;
+            background-color: transparent;
+            border: 1px solid ${theme.colors.lightSecondary};
+            border-radius: 90px;
+            transition: 0.3s ease-out;
+            color: ${theme.colors.secondary};
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 18px;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+          .selected{
+            background-color: ${theme.colors.lightSecondary};
+          }
+          
+          .submit {
+            width: 225px;
+            height: 35px;
+            border: none;
+            border-radius: 0px 20px 20px 0px;
+            background-color: ${theme.colors.third};
+            transition: 0.7s;
+
+            &:hover{
+              cursor: pointer;
+              background-color: ${theme.colors.secondary};
+              color: ${theme.colors.white};
+              border: none;
             }
           }
         `}

@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import theme from '../../../styles/theme'
+import close from '../../assets/images/HamburgerIcon.svg'
 
 export default function MenuIcon({ open, clickHandler }) {
   return <>
@@ -6,16 +9,10 @@ export default function MenuIcon({ open, clickHandler }) {
         ? (
           <div className={'menuIconBox'} onClick={clickHandler}>
 
-            {/* <div className={'iconMenu' + ' ' + (open ? 'close' : 'open')} onClick={clickHandler}> */}
-            <div className={(open ? 'iconMenu' + ' ' + 'close' : 'iconMenu' + ' ' +  'open')} onClick={clickHandler}>
-              <div className="margin">
-                <svg width="2" height="18" viewBox="0 0 2 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="1" y1="0.505859" x2="0.999999" y2="17.2905" stroke="#EC1F3E" stroke-width="2" />
-                </svg>
+            <div className={(open ? 'iconMenu' + ' ' + 'close' : 'iconMenu' + ' ' + 'open')} onClick={clickHandler}>
 
-              </div>
               <div className="closeMenuIcon" onClick={clickHandler}>
-                <svg
+                {/* <svg
                   width="24"
                   height="17"
                   viewBox="0 0 24 17"
@@ -24,7 +21,14 @@ export default function MenuIcon({ open, clickHandler }) {
                   <line y1="1.5" x2="24" y2="1.5" stroke="#EC1F3E" stroke-width="3" />
                   <line y1="8.5" x2="24" y2="8.5" stroke="#EC1F3E" stroke-width="3" />
                   <line y1="15.5" x2="24" y2="15.5" stroke="#EC1F3E" stroke-width="3" />
-                </svg>
+                </svg> */}
+                <Image
+                  src={close}
+                  alt={`number-icon`}
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
               </div>
             </div>
 
@@ -47,9 +51,9 @@ export default function MenuIcon({ open, clickHandler }) {
         .menuIconBox{
           width: 100%;
           height: auto;
+          position: relative;
         }
         .iconMenu{
-          position: relative; 
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -57,12 +61,12 @@ export default function MenuIcon({ open, clickHandler }) {
           width: 100%;
           margin-top: 45px;
           height: auto;
+          border-left: 3px solid ${theme.colors.lightSecondary};
           
-
-          .margin{
-            position: absolute;
-            left: 0;
-            z-index: 10;
+          .closeMenuIcon{
+            position: relative;
+            height: 20px;
+            width: 24px;
           }
           &:hover{
             cursor: pointer;

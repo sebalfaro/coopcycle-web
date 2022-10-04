@@ -3,6 +3,7 @@ import { useState } from "react"
 import Button from "../Button/Button"
 import theme from "../../../styles/theme"
 import character from '../../assets/images/caracter1.svg'
+import Lottie from "lottie-react";
 
 export default function Card({ title, intro, info, img, items }) {
 
@@ -12,15 +13,7 @@ export default function Card({ title, intro, info, img, items }) {
     <>
       <div className="cardBox">
         <div className="imgBox">
-          <Image
-            src={character}
-            alt={`number-icon`}
-            layout="fill"
-            width={270}
-            height={270}
-            objectFit="cover"
-            priority
-          />
+          <Lottie loop={true} animationData={img} style={{ height: '100%' }} />
         </div>
         <div className={"contentBox" + ' ' + (open ? 'contentBoxOpen' : '')}>
           <div className={"textBox" + ' ' + (open ? 'textBoxOpen' : '')}>

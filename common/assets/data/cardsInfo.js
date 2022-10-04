@@ -1,6 +1,10 @@
+import img1 from '../images/svgImages/Icono_Repartidor_Izq_V2.json'
+import img2 from '../images/svgImages/Icono_Cocinera_2.json'
+import img3 from '../images/svgImages/Icono_Repartidor_2.json'
+
 export const cardsInfo = [
   {
-    img: '',
+    img: img1,
     title: 'Cooperativas',
     intro: 'Si formas parte de una cooperativa de reparto, te invitamos a sumarte a la red ¡Pegate una vuelta por Coopcycle!',
     info: 'En CoopCycle tu Cooperativa',
@@ -15,7 +19,7 @@ export const cardsInfo = [
     ]
   },
   {
-    img: '',
+    img: img2,
     title: 'Comerciantes',
     intro: 'Si tenés un comercio y querés condiciones más justas, en Coopcycle la comisión la negocias directamente con la cooperativa que realiza el reparto ',
     info: '¿Cómo formar una Coop?',
@@ -28,7 +32,7 @@ export const cardsInfo = [
     ]
   },
   {
-    img: '',
+    img: img3,
     title: 'Repartidores/as',
     intro: 'Si tenés compañeros o compañeras con las que querés formar una Coop, siendo al menos tres podés hacerlo ¡Animate! Coopcycle te está esperando. ',
     info: 'En CoopCycle tu comercio',

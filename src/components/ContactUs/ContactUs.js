@@ -1,3 +1,4 @@
+import ContactForm from "../../../common/components/ContactForm/ContactForm";
 
 export default function ContactUs(){
   return(
@@ -8,17 +9,26 @@ export default function ContactUs(){
             <h1>¡Hola! <br /> ¿Querés ser parte de la red de <br /> cooperativas de reparto?</h1>
           </div>
           <div className="formBox">
-            <div className="inputBox"></div>
-            <div className="infoBox"></div>
+            <ContactForm />
           </div>
         </div>
       </section>
       <style jsx>
         {`
           .contactUsBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
             height: 80vh;
-            background-color: gray;
+
+            h1{
+              font-size: 3rem;
+            }
+          }
+          .contentBox{
+            width: 85%;
+            height: 100%;
           }
         `}
       </style>

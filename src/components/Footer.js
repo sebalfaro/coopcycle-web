@@ -16,8 +16,6 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt="Logo Coopcycle"
-                width={258}
-                height={51}
                 layout="fill"
                 objectFit="contain"
                 priority
@@ -29,12 +27,6 @@ export default function Footer() {
         <div className="linksBox">
 
           <div className="contactBox">
-            <div className="mailBox">
-              <h4>¿Querés contactarnos?</h4>
-              <Link href="#">
-                <a>coopcycleargentina@gmail.com</a>
-              </Link>
-            </div>
             <div className="socialMediaBox">
               <h4>¡Seguinos!</h4>
 
@@ -45,8 +37,6 @@ export default function Footer() {
                       <Image
                         src={fb}
                         alt="facebook-icon"
-                        width={14}
-                        height={14}
                         layout="fill"
                         objectFit="contain"
                         priority
@@ -60,8 +50,6 @@ export default function Footer() {
                       <Image
                         src={tw}
                         alt="twitter-icon"
-                        width={14}
-                        height={14}
                         layout="fill"
                         objectFit="contain"
                         priority
@@ -75,8 +63,6 @@ export default function Footer() {
                       <Image
                         src={ig}
                         alt="instagram-icon"
-                        width={14}
-                        height={14}
                         layout="fill"
                         objectFit="contain"
                         priority
@@ -88,7 +74,6 @@ export default function Footer() {
 
             </div>
           </div>
-          <hr />
 
           <nav className="navBox">
             <Link href="#">
@@ -141,41 +126,25 @@ export default function Footer() {
             margin: 1rem 0;
           }
         }
-        .contactBox{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          height: 48px;
-
-        }
-
-        .mailBox{
-          height: 100%;
-          width: fit-content;
-          color: ${theme.colors.secondary};
-          a{
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: ${theme.colors.secondary};
-          }
-        }
 
         .socialMediaBox{
-          width: 120px;
-          height: 50px;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          border-bottom: 1px solid ${theme.colors.gray};
 
           .socialMediaIconsBox{
             position: relative;
             display: flex;
-            justify-content: space-between;
-            height: 40px;
-            width: 100%;
+            width: 100px;
+            gap: 20px;
+            margin-bottom: 15px;
 
             .socialMediaIcon{
               position: relative;
-              height: 40px;
+              height: 20px;
               width: 20px;
             }
           }

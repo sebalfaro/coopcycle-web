@@ -7,7 +7,6 @@ import BeCoopCycle from '../src/components/BeCoopCycle/BeCoopCycle'
 import Footer from '../src/components/Footer'
 import Hero from '../src/components/Hero'
 import SideBar from '../src/components/SideBar'
-import styles from '../styles/Home.module.css'
 import ContactUs from '../src/components/ContactUs/ContactUs'
 
 export default function Home() {

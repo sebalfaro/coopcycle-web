@@ -3,6 +3,7 @@ import Button from "../../../common/components/Button/Button";
 import Card from "../../../common/components/Card/Card";
 import { cardsInfo } from "../../../common/assets/data/cardsInfo"
 
+
 export default function BeCoopCycle() {
 
   return (
@@ -33,7 +34,7 @@ export default function BeCoopCycle() {
               font-weight: 900;
               font-size: 2.7rem;
               line-height: 44px;
-              padding-top: 2rem;
+              padding-top: 5rem;
             }
             p{
               text-align: center;

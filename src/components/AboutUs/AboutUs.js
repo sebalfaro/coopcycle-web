@@ -1,8 +1,7 @@
-import Image from "next/image";
-import delivery from "../../../common/assets/images/Repartidora.svg"
 import Button from "../../../common/components/Button/Button";
-import theme from "../../../styles/theme";
 import Average from "./Average";
+import Lottie from "lottie-react";
+import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
 
 export default function AboutUs() {
   return (
@@ -10,15 +9,7 @@ export default function AboutUs() {
       <section className="aboutUsBox">
         <div className="infoBox">
           <div className="imgBox">
-            <Image
-              src={delivery}
-              alt={`number-icon`}
-              width={15}
-              height={15}
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
+            <Lottie loop={true} animationData={img1} style={{height: '100%'}}/>
           </div>
           <div className="textBox">
             <h1>Somos cooperativismo de plataforma en red</h1>
@@ -30,11 +21,11 @@ export default function AboutUs() {
               <br />
               <br /> Las experiencias en distintas partes de Europa demuestra que es una <b> verdadera alternativa a las plataformas privadas </b> que precarizan el trabajo y monopolizan la oferta.
             </p>
-            <Button  text="Conocer más" />
+            <Button text="Conocer más" />
           </div>
         </div>
         <div className="avarageBox">
-            <Average />
+          <Average />
         </div>
       </section>
       <style jsx>
@@ -49,14 +40,12 @@ export default function AboutUs() {
               justify-content: center;
               align-items: center;
               width: 100%;
-              height: 80%;
               gap: 50px;
 
               .imgBox {
                 position: relative;
-                width: 287.58px;
-                height: 470.2px;
-                z-index: -1;
+                width: auto;
+                height: 600px;
               }
 
               .textBox{

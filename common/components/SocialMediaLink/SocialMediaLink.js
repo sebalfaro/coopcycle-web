@@ -9,8 +9,8 @@ export default function SocialMediaLink({ icon = '', name = '', size, link='#'})
           <Image
             src={icon}
             alt={`${name}-icon`}
-            width={size}
-            height={size}
+            // width={size}
+            // height={size}
             layout="fill"
             objectFit="contain"
             priority
