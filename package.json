@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "formik": "^2.2.9",
     "install-peerdeps": "^3.0.3",
     "lottie-react": "^2.3.1",

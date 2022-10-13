@@ -8,6 +8,8 @@ import Footer from '../src/components/Footer'
 import Hero from '../src/components/Hero'
 import SideBar from '../src/components/SideBar'
 import ContactUs from '../src/components/ContactUs/ContactUs'
+import AboutUsGrid from '../src/components/AboutUs/AboutUsGrid'
+import AlternativeGrid from '../src/components/Alternative/AlternativeGrid'
 
 export default function Home() {
   return (
@@ -22,9 +24,11 @@ export default function Home() {
         <main >
           <SideBar />
           <Hero />
-          <AboutUs />
+          {/* <AboutUs /> */}
+          <AboutUsGrid />
           <BeCoopCycle />
-          <Alternative />
+          {/* <Alternative /> */}
+          <AlternativeGrid />
           <WhoWeAre />
           <ContactUs />
         </main>

@@ -10,7 +10,7 @@ export default function Alternative() {
       <section className="alternativeBox">
         <div className="imgBox">
           <Lottie loop={true} animationData={character2} style={{height: '100%'}}/>
-        </div>
+        </div>2
         <div className="contentBox">
           <div className="titleBox">
             <h1>Somos una alternativa <br /> a las plataformas privadas</h1>

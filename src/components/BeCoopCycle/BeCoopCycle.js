@@ -18,7 +18,7 @@ export default function BeCoopCycle() {
 
         </div>
 
-        <p> <b>¡Si querés ser parte de Coopcycle,<br /> no dudes en comunicarte con nosotras/os!</b> </p>
+        <h4>¡Si querés ser parte de Coopcycle,<br /> no dudes en comunicarte con nosotras/os!</h4>
         <Button text="¡Sumate!" type='center' />
       </section>
       <style jsx>
@@ -31,12 +31,9 @@ export default function BeCoopCycle() {
             min-height: 100vh;
 
             h1{
-              font-weight: 900;
-              font-size: 2.7rem;
-              line-height: 44px;
               padding-top: 5rem;
             }
-            p{
+            h4 {
               text-align: center;
               padding-bottom: 22px;
             }
