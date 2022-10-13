@@ -23,14 +23,45 @@ export default function ContactForm() {
     sender: ''
   }
 
+  const handlerSubmit = async ({ name, mail, message, sender }) => {
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify({
+        email: mail,
+        fullname: name,
+        subject: sender,
+        message: message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const { error } = await res.json();
+    if (error) {
+      console.log(error);
+      // setShowSuccessMessage(false);
+      // setShowFailureMessage(true);
+      // setButtonText("Send");
+      return;
+    }
+    // setShowSuccessMessage(true);
+    // setShowFailureMessage(false);
+    // setButtonText("Send");
+    // console.log(name, mail, sender, message);
+  }
+
+
+
   return (
     <>
       <Formik
         initialValues={data}
         onSubmit={(values, actions) => {
 
-          console.log('submited', { values })
-          actions.resetForm()
+          // console.log('submited', { values })
+          handlerSubmit(values)
+          // actions.resetForm()
         }}
         validationSchema={Yup.object().shape({
           name: nameSchema,
@@ -45,9 +76,9 @@ export default function ContactForm() {
           <Form>
             <div className="formBox">
               <div className="inputBox">
-                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" formikProps={props} />
-                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail" formikProps={props} />
-                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' placeholder="Tu mensaje" formikProps={props} />
+                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" errors={props.errors} touched={props.touched} />
+                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail" errors={props.errors} touched={props.touched}/>
+                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' placeholder="Tu mensaje" errors={props.errors} touched={props.touched} />
                 <br />
                 <SubmitBtn type='submit' text='Submit' onClickHandler={props.submitForm} />
               </div>
@@ -60,11 +91,11 @@ export default function ContactForm() {
                   <Button text={content.suport} type='centerSecondary' formikProps={props} value={props.values.sender} />
                   <Button text={content.other} type='centerSecondary' formikProps={props} value={props.values.sender} />
                 </div>
-                  {
-                    props.errors.sender && props.touched.sender
-                      ? <div className='errorBox'><p>{props.errors.sender}</p></div>
-                      : null
-                  }
+                {
+                  props.errors.sender && props.touched.sender
+                    ? <div className='errorBox'><p>{props.errors.sender}</p></div>
+                    : null
+                }
               </div>
             </div>
           </Form>

@@ -10,88 +10,93 @@ export default function Footer() {
   return (
     <>
       <footer className="footerBox">
-        <div className="logoBox">
-          <Link href="#">
-            <a>
-              <Image
-                src={logo}
-                alt="Logo Coopcycle"
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
-            </a>
-          </Link>
+        <div className="box">
 
-        </div>
-        <div className="linksBox">
 
-          <div className="contactBox">
-            <div className="socialMediaBox">
-              <h4>¡Seguinos!</h4>
+          <div className="logoBox">
+            <Link href="#">
+              <a>
+                <Image
+                  src={logo}
+                  alt="Logo Coopcycle"
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
+              </a>
+            </Link>
 
-              <div className="socialMediaIconsBox">
-                <Link href="#">
-                  <a>
-                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
-                      <Image
-                        src={fb}
-                        alt="facebook-icon"
-                        layout="fill"
-                        objectFit="contain"
-                        priority
-                      />
-                    </div>
-                  </a>
-                </Link>
-                <Link href="#">
-                  <a>
-                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
-                      <Image
-                        src={tw}
-                        alt="twitter-icon"
-                        layout="fill"
-                        objectFit="contain"
-                        priority
-                      />
-                    </div>
-                  </a>
-                </Link>
-                <Link href="#">
-                  <a>
-                    <div className="socialMediaIcon" style={{ position: 'relative' }}>
-                      <Image
-                        src={ig}
-                        alt="instagram-icon"
-                        layout="fill"
-                        objectFit="contain"
-                        priority
-                      />
-                    </div>
-                  </a>
-                </Link>
-              </div>
-
-            </div>
           </div>
 
-          <nav className="navBox">
-            <Link href="#">
-              <a>Sobre nosotros/as</a>
-            </Link>
-            <Link href="#">
-              <a>¡Sumate!</a>
-            </Link>
-            <Link href="#">
-              <a>Derechos</a>
-            </Link>
-            <Link href="#">
-              <a>¿Quiénes somos?</a>
-            </Link>
-            <Link href="#">
-              <a>Contacto</a>
-            </Link>
-          </nav>
+          <div className="linksBox">
+
+            <div className="contactBox">
+              <div className="socialMediaBox">
+                <h4>¡Seguinos!</h4>
+
+                <div className="socialMediaIconsBox">
+                  <Link href="#">
+                    <a>
+                      <div className="socialMediaIcon" style={{ position: 'relative' }}>
+                        <Image
+                          src={fb}
+                          alt="facebook-icon"
+                          layout="fill"
+                          objectFit="contain"
+                          priority
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="#">
+                    <a>
+                      <div className="socialMediaIcon" style={{ position: 'relative' }}>
+                        <Image
+                          src={tw}
+                          alt="twitter-icon"
+                          layout="fill"
+                          objectFit="contain"
+                          priority
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="#">
+                    <a>
+                      <div className="socialMediaIcon" style={{ position: 'relative' }}>
+                        <Image
+                          src={ig}
+                          alt="instagram-icon"
+                          layout="fill"
+                          objectFit="contain"
+                          priority
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                </div>
+
+              </div>
+            </div>
+
+            <nav className="navBox">
+              <Link href="#">
+                <a>Sobre nosotros/as</a>
+              </Link>
+              <Link href="#">
+                <a>¡Sumate!</a>
+              </Link>
+              <Link href="#">
+                <a>Derechos</a>
+              </Link>
+              <Link href="#">
+                <a>¿Quiénes somos?</a>
+              </Link>
+              <Link href="#">
+                <a>Contacto</a>
+              </Link>
+            </nav>
+          </div>
         </div>
       </footer>
       <style jsx>
@@ -99,17 +104,17 @@ export default function Footer() {
         .footerBox{
           position: relative;
           z-index: 20;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
           width: 100%;
           height: 224px;
-          gap: 5.5%;
           background-color: ${theme.colors.third};
         }
+
+        .box{
+          height: 100%;
+        
         .logoBox{
           position: relative;
+          grid-column: 2/7;
           width: 268px;
           height: 100px;
         }
@@ -159,6 +164,7 @@ export default function Footer() {
           a{
             color: ${theme.colors.white};
           }
+        }
         }
       `}
       </style>

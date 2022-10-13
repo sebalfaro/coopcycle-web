@@ -1,6 +1,6 @@
 import { infoCardsAlternative } from "../../../common/assets/data/infoCardsAlternative";
 import Lottie from "lottie-react";
-import character2 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
+import character2 from '../../../common/assets/images/svgImages/Animacion_Derechos_V2.json'
 import InfoCard from "../../../common/components/InfoCard/InfoCard";
 import theme from "../../../styles/theme";
 
@@ -10,7 +10,7 @@ export default function Alternative() {
       <section className="alternativeBox">
         <div className="imgBox">
           <Lottie loop={true} animationData={character2} style={{height: '100%'}}/>
-        </div>
+        </div>2
         <div className="contentBox">
           <div className="titleBox">
             <h1>Somos una alternativa <br /> a las plataformas privadas</h1>

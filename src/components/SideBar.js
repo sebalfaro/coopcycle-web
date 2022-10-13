@@ -52,8 +52,8 @@ export default function SideBar() {
 
                   <div className="column1Links">
                     <BarLink title="¿Qué es Coopcycle?" number={one} link='#' clickHandler={clickHandler} />
-                    <BarLink title="Derechos" number={two} link='#' clickHandler={clickHandler} />
                     <BarLink title="¡Sumate!" number={three} link='#' clickHandler={clickHandler} />
+                    <BarLink title="Derechos" number={two} link='#' clickHandler={clickHandler} />
                     <BarLink title="¿Quienes somos?" number={four} link='#' clickHandler={clickHandler} />
                     <BarLink title="Contacto" number={five} link='#' clickHandler={clickHandler} />
                   </div>

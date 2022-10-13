@@ -1,8 +1,7 @@
 import theme from "../../../styles/theme";
 
 export default function CustomTexA(props) {
-  const {errors, touched} = props.formikProps
-  const {name} = props
+  const { name, errors, touched } = props
 
   return <>
     <div className="textABox">

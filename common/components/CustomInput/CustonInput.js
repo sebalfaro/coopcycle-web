@@ -1,8 +1,7 @@
 import theme from "../../../styles/theme"
 
 const CustomInputComponent = (props) => {
-  const {errors, touched} = props.formikProps
-  const {name} = props
+  const { name, errors, touched } = props
 
   return (
     <>
@@ -11,7 +10,7 @@ const CustomInputComponent = (props) => {
         <input className="my-custom-input" type="text" {...props} />
         {
           errors[name] && touched[props.name]
-            ? <div className='errorBox'><p>{props.formikProps.errors[props.name]}</p></div>
+            ? <div className='errorBox'><p>{errors[props.name]}</p></div>
             : null
         }
       </div>

@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
+import arrow1 from '../../assets/images/arrow1.svg'
 import theme from "../../../styles/theme";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Button({ text = "", onClickHandler, type = 'right', value, formikProps }) {
 
   const [selected, setSelected] = useState(false);
 
-  const selectedOption = (text)=>{
-    if(text !== value){
+  const selectedOption = (text) => {
+    if (text !== value) {
       formikProps.setFieldValue('sender', text)
     }
   }
 
   useEffect(() => {
-    if(value){
-      if(text === value){
+    if (value) {
+      if (text === value) {
         setSelected(!selected)
       }
-      if(text !== value){
+      if (text !== value) {
         setSelected(false)
       }
     }
   }, [value])
-  
+
 
   const clickHandler = (e) => {
     if (type === 'open') {
@@ -31,17 +34,63 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
     if (type === 'centerSecondary') {
       e.preventDefault()
       selectedOption(text)
-    }   
+    }
   }
 
   return (
     <>
-      <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >{text}</button>
+      {
+        type === 'right' ? (
+          <Link href='https://coopcycle.org/es/' >
+            <a target="_blank">
+              <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                <div className="wrap">
+                  {text}
+                  {
+                    type === 'right' && (
+                      <div className="btn1-icon">
+                        <Image
+                          src={arrow1}
+                          alt={`btn1-icon`}
+                          layout="fill"
+                          objectFit="contain"
+                          priority
+                        />
+                      </div>
+                    )
+                  }
+                </div>
+              </button>
+            </a>
+          </Link>
+        )
+        :(
+          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+          <div className="wrap">
+            {text}
+            {
+              type === 'right' && (
+                <div className="btn1-icon">
+                  <Image
+                    src={arrow1}
+                    alt={`btn1-icon`}
+                    layout="fill"
+                    objectFit="contain"
+                    priority
+                  />
+                </div>
+              )
+            }
+          </div>
+        </button>
+        )
+      }
       <style jsx>
         {`
           .right{
-            width: 225px;
-            height: 35px;
+            width: 197px;
+            height: 38px;
+           
             border: none;
             border-radius: 0px 20px 20px 0px;
             background-color: ${theme.colors.third};
@@ -49,9 +98,27 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
 
             &:hover{
               cursor: pointer;
-              background-color: ${theme.colors.secondary};
-              color: ${theme.colors.white};
-              border: none;
+              background-color: ${theme.colors.white};
+              color: ${theme.colors.third};
+              border: 1px solid ${theme.colors.third};
+            }
+
+            .wrap{
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              gap: 1rem;
+              font-family: 'Space Grotesk';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 1.125rem;
+
+              .btn1-icon {
+                position: relative;
+                width: 1.25rem;
+                height: 1rem;
+              }
             }
           }
           .open{
@@ -77,18 +144,25 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             }
           }
           .center{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; 
             width: 196px;
             height: 38px;
             background-color: ${theme.colors.third};
             border: none;
             border-radius: 90px;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.125rem;
             transition: 0.3s ease-out;
 
             &:hover{
               cursor: pointer;
               background-color: transparent;
               color: ${theme.colors.third};
-              border: none;
               border: 1px solid ${theme.colors.third};
             }
           }
