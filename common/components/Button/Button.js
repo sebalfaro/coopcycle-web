@@ -5,7 +5,7 @@ import theme from "../../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Button({ text = "", altText = "", onClickHandler, type = 'right', value, formikProps }) {
+export default function Button({ text = "", altText = "", path = "#form", onClickHandler, type = 'right', value, formikProps }) {
 
   const [selected, setSelected] = useState(false);
 
@@ -91,14 +91,28 @@ export default function Button({ text = "", altText = "", onClickHandler, type =
             :
             type === 'center'
               ? (
-                <Link href='#form' scroll={false}>
-                  <a >
-                    <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
-                      <div className="wrap">
-                        {text}
-                      </div>
-                    </button>
-                  </a>
+                <Link href={path} scroll={false}>
+                  {
+                    path === '#form'
+                      ? (
+                        <a >
+                          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                            <div className="wrap">
+                              {text}
+                            </div>
+                          </button>
+                        </a>
+                      )
+                      : (
+                        <a target="_blank" rel='noopener noreferrer'>
+                          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                            <div className="wrap">
+                              {text}
+                            </div>
+                          </button>
+                        </a>
+                      )
+                  }
                 </Link>
               )
               : (

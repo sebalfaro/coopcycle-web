@@ -14,7 +14,7 @@ export default function nWhoWeAre() {
         <div className="logo1Box">
           <Link href="https://facttic.org.ar/">
             <a target='_blank' rel='noopener noreferrer'>
-              <Facttic color={'#000000'} className='factticLogo' />
+              <Facttic color={'#C1C0C1'} className='factticLogo' />
             </a>
           </Link>
         </div>
@@ -121,7 +121,7 @@ export default function nWhoWeAre() {
             gap: 20px;
             
             h1{
-              margin-top: 4rem;
+              margin-top: 6rem;
             }
 
             .logo1Box{

@@ -19,7 +19,7 @@ const Facttic = ({ color }) => {
         {`
           svg {
             path {
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease;
             }
             .fill {
             fill: ${color ? color : theme.colors.third};
@@ -27,7 +27,7 @@ const Facttic = ({ color }) => {
             &:hover,
             &:focus {
             .fill {
-              fill: ${theme.colors.third};
+              fill: #000000;
             }
             }
           }

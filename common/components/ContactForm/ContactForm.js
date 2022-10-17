@@ -76,9 +76,9 @@ export default function ContactForm() {
           <Form>
             <div className="formBox">
               <div className="inputBox">
-                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" errors={props.errors} touched={props.touched} />
-                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail" errors={props.errors} touched={props.touched}/>
-                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' placeholder="Tu mensaje" errors={props.errors} touched={props.touched} />
+                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' errors={props.errors} touched={props.touched} />
+                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' errors={props.errors} touched={props.touched}/>
+                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' errors={props.errors} touched={props.touched} />
                 <br />
                 <SubmitBtn type='submit' text='Submit' onClickHandler={props.submitForm} />
               </div>
@@ -105,19 +105,18 @@ export default function ContactForm() {
       <style jsx>
         {`
           .formBox{
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            column-gap: 2rem;
             width: 100%;
             height: 100%;
-            gap: 20px;
 
             .inputBox{
-              width: 50%;
-              height: 100%;
+              grid-column: 1/ span 5;
               gap: 10px;
             }
             .submitBox{
-              width: 45%;
+              grid-column: 6/ span 5;
               height: 100%;
 
               .btnsBox{
