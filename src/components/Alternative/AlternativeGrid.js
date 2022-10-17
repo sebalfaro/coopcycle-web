@@ -6,7 +6,7 @@ import InfoCard from "../../../common/components/InfoCard/InfoCard";
 export default function AlternativeGrid() {
   return (
     <>
-      <section className="alternativeBox">
+      <section id="derechos" className="alternativeBox">
         <div className="box">
           <div className="imgBox">
             <Lottie loop={true} animationData={character2} style={{ height: '100%' }} />
@@ -30,39 +30,32 @@ export default function AlternativeGrid() {
       <style jsx>
         {`
           .alternativeBox{
-            width: 100%;
-            min-height: 65vh;
+              width: 100%;
               
-              .imgBox{
-                position: relative;
-                grid-column: 2/6;
-                height: 522px;
-              }
-              
-              .contentBox{
-                grid-column: 6/10;
-                display: flex; 
-                flex-direction: column;
-                gap: 50px;
-                width: 470px;
+              .box {
+                margin-top: 5rem;
 
-                .titleBox{
-                  h1{
-                    font-style: normal;
-                    font-weight: 900;
-                    font-size: 40px;
-                    line-height: 44px;
+                .imgBox{
+                  position: relative;
+                  grid-column: 2/ span 4;
+                  height: 522px;
+                }
+                
+                .contentBox{
+                  grid-column: 6/ span 5;
+                  display: flex; 
+                  flex-direction: column;
+                  gap: 50px;
+                  width: 470px;
+
+                  .infoBox{
+                    display: flex; 
+                    flex-direction: column;
+                    width: 100%;
                   }
                 }
 
-                .infoBox{
-                  display: flex; 
-                  flex-direction: column;
-                  width: 100%;
-                }
               }
-
-            
           }
         `}
       </style>

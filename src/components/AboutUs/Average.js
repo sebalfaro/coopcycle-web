@@ -6,15 +6,22 @@ export default function Average() {
     <>
       <div className="averageBox">
         <div className="contentBox">
-          <div className="block">
-            <h1><CountUp start={400} end={500} duration={5} />+</h1>
-            <p>Entregas Realizadas</p>
+
+          <div className="text">
+            <h2>Coopcycle <br /> en el mundo</h2>
           </div>
 
           <div className="line"></div>
 
           <div className="block">
-            <h1><CountUp start={44900} end={45000} duration={5} />+</h1>
+            <h1><CountUp start={0} end={12} duration={2} />+</h1>
+            <p>Países</p>
+          </div>
+
+          <div className="line"></div>
+
+          <div className="block">
+            <h1><CountUp start={44950} end={45000} duration={2} />+</h1>
             <p>Trabajadores/as</p>
           </div>
         </div>
@@ -22,8 +29,8 @@ export default function Average() {
       <style jsx>
         {`
           .averageBox{
-            width: 600px;
-            height: 173px;
+            width: 880px;
+            height: 172px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -34,8 +41,8 @@ export default function Average() {
             .contentBox{
               display: flex;
               flex-direction: row;
-              align-items: baseline;
-              gap: 20px;
+              align-items: center;
+              gap: 2.5rem;
 
               h1{
                   font-family: 'Passion One', sans-serif;
@@ -47,6 +54,12 @@ export default function Average() {
                   margin-bottom: -15px;
                 }
 
+              .text{
+
+                h2{
+                  letter-spacing: 0.02em;
+                }
+              }
               .block{
                 display: flex;
                 flex-direction: column;
@@ -64,8 +77,8 @@ export default function Average() {
               }
               .line{
                 width: 2px;
-                height: 47px;
-                border-left: 2px solid ${theme.colors.gray};
+                height: 100%;
+                border-left: 2px solid rgba(0, 0, 0, 0.2);
               }
             }
 

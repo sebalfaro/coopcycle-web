@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import WhoWeAre from '../src/components/WhoWeAre/WhoWeAre'
 import AboutUs from '../src/components/AboutUs/AboutUs'
 import Alternative from '../src/components/Alternative/Alternative'

@@ -6,7 +6,7 @@ import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.
 export default function AboutUsGrid() {
   return (
     <>
-      <section className="aboutUsBox">
+      <section id="que-es-coopcycle" className="aboutUsBox">
         <div className="box">
           <div className="imgBox">
             <Lottie loop={true} animationData={img1} style={{ height: '100%' }} />
@@ -18,6 +18,7 @@ export default function AboutUsGrid() {
             <p>Las experiencias en distintas partes de Europa demuestra que es una <b> verdadera alternativa a las plataformas privadas </b> que precarizan el trabajo y monopolizan la oferta.</p>
             <Button text="Conocer más" />
           </div>
+
         </div>
         <div className="avarageBox">
           <Average />
@@ -27,7 +28,6 @@ export default function AboutUsGrid() {
         {`
           .aboutUsBox{
             width: 100%;
-            height: 100vh;
 
               .imgBox {
                 position: relative;
@@ -51,6 +51,7 @@ export default function AboutUsGrid() {
 
             .avarageBox{
                 width: 100%;
+                margin-top: 4rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;

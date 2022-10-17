@@ -1,29 +1,48 @@
-import Image from "next/image";
 import Link from "next/link";
+import Facebook from "../icons/Facebook";
+import Instagram from "../icons/Instagram";
+import Twitter from "../icons/Twitter";
 
-export default function SocialMediaLink({ icon = '', name = '', size, link='#'}) {
+export default function SocialMediaLink({ iconType, filled }) {
   return <>
-    <Link href={link}>
-      <a>
-        <div className="socialMediaIconBox" >
-          <Image
-            src={icon}
-            alt={`${name}-icon`}
-            layout="fill"
-            objectFit="contain"
-            priority
-          />
-        </div>
-      </a>
-    </Link>
+    {
+      iconType === 'facebook'
+        ? (
+          <Link href='https://es-la.facebook.com/' prefetch={false}>
+            <a target='_blank' rel='noopener noreferrer'>
+              <Facebook filled={filled} />
+            </a>
+          </Link>
+        )
+        :
+        iconType === 'twitter'
+        ? (
+          <Link href='https://twitter.com/' prefetch={false}>
+            <a target='_blank' rel='noopener noreferrer'>
+              <Twitter filled={filled} />
+            </a>
+          </Link>
+        )
+        :
+        iconType = 'instagram'
+        ? (
+          <Link href='https://www.instagram.com/' prefetch={false}>
+            <a target='_blank' rel='noopener noreferrer'>
+              <Instagram filled={filled} />
+            </a>
+          </Link>
+        )
+        : null
+    }
 
     <style jsx>
       {`
+        /* 
         .socialMediaIconBox{
           position: relative;
-          width: ${size} + "px";
-          height: ${size} + "px";
+
         }
+        */
       `}
     </style>
   </>

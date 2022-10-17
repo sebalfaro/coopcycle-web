@@ -1,36 +1,50 @@
+import Link from "next/link"
 import Image from "next/image"
-import logo1 from "../../../common/assets/images/LogoFacttic.svg"
-import min from "../../../common/assets/images/mincyt.png"
-import inaes from "../../../common/assets/images/inaes.png"
-import procodas from "../../../common/assets/images/procodas.png"
-import impulso from "../../../common/assets/images/impulso.png"
-import dipac from "../../../common/assets/images/dipac.png"
-import rus from "../../../common/assets/images/rus.png"
-import credicoop from "../../../common/assets/images/credicoop.png"
-import germani from "../../../common/assets/images/germani.png"
+import Facttic from "../../../common/components/icons/Facttic"
+import logos from "../../../common/assets/images/logos/logos"
 import theme from "../../../styles/theme"
+import logo from '../../../common/assets/images/logos/1.DIPAC_final.svg'
 
-export default function WhoWeAre() {
+export default function nWhoWeAre() {
+
   return (
     <>
-      <section className="whoweareBox">
+      <section id="quienes-somos" className="whoweareBox">
         <h1>¿Quiénes somos?</h1>
         <div className="logo1Box">
-          <Image
-            src={logo1}
-            alt={`number-icon`}
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
+          <Link href="https://facttic.org.ar/">
+            <a target='_blank' rel='noopener noreferrer'>
+              <Facttic color={'#000000'} className='factticLogo' />
+            </a>
+          </Link>
         </div>
 
         <div className="logoBox">
           <p>NOS APOYAN</p>
           <div className="imgsBox">
             <div className="logos">
+                <Image
+                  src={logos.line1.logo1}
+                  alt={`number-icon`}
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
+            </div>
+            <div className="line"></div>
+            <div className="logos">
               <Image
-                src={min}
+                src={logos.line1.logo2}
+                alt={`number-icon`}
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+            <div className="line"></div>
+            <div className="logos">
+              <Image
+                src={logos.line1.logo3}
                 alt={`number-icon`}
                 layout="fill"
                 objectFit="cover"
@@ -40,27 +54,7 @@ export default function WhoWeAre() {
             <div className="line"></div>
             <div className="logos">
               <Image
-                src={inaes}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
-            <div className="line"></div>
-            <div className="logos">
-              <Image
-                src={procodas}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
-            <div className="line"></div>
-            <div className="logos">
-              <Image
-                src={impulso}
+                src={logos.line1.logo4}
                 alt={`number-icon`}
                 layout="fill"
                 objectFit="cover"
@@ -75,7 +69,27 @@ export default function WhoWeAre() {
           <div className="imgsBox">
             <div className="logos">
               <Image
-                src={dipac}
+                src={'/images/1.DIPAC_final.svg'}
+                alt={`number-icon`}
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+            <div className="line"></div>
+            <div className="logos">
+              <Image
+                src={'/images/rus.svg'}
+                alt={`number-icon`}
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+            <div className="line"></div>
+            <div className="logos">
+              <Image
+                src={logos.line2.logo7}
                 alt={`number-icon`}
                 layout="fill"
                 objectFit="cover"
@@ -85,27 +99,7 @@ export default function WhoWeAre() {
             <div className="line"></div>
             <div className="logos">
               <Image
-                src={rus}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
-            <div className="line"></div>
-            <div className="logos">
-              <Image
-                src={credicoop}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
-            <div className="line"></div>
-            <div className="logos">
-              <Image
-                src={germani}
+                src={logos.line2.logo8}
                 alt={`number-icon`}
                 layout="fill"
                 objectFit="cover"
@@ -120,7 +114,6 @@ export default function WhoWeAre() {
         {`
           .whoweareBox{
             width: 100%;
-            height: 75vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -128,16 +121,13 @@ export default function WhoWeAre() {
             gap: 20px;
             
             h1{
-              font-size: 3rem;
-              font-weight: 900;
-              line-height: 44px;
+              margin-top: 4rem;
             }
 
             .logo1Box{
-              position: relative;
-              width: 162.95px;
-              height: 40.75px;
+              padding-top: 1rem;
             }
+            
             .logoBox{
               display: flex;
               flex-direction: column;
@@ -149,7 +139,7 @@ export default function WhoWeAre() {
                 margin-top: 30px;
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
                 gap: 30px;
 
                 .logos{

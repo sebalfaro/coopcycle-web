@@ -12,16 +12,6 @@ export default function MenuIcon({ open, clickHandler }) {
             <div className={(open ? 'iconMenu' + ' ' + 'close' : 'iconMenu' + ' ' + 'open')} onClick={clickHandler}>
 
               <div className="closeMenuIcon" onClick={clickHandler}>
-                {/* <svg
-                  width="24"
-                  height="17"
-                  viewBox="0 0 24 17"
-                  fill="EC1F3E"
-                >
-                  <line y1="1.5" x2="24" y2="1.5" stroke="#EC1F3E" stroke-width="3" />
-                  <line y1="8.5" x2="24" y2="8.5" stroke="#EC1F3E" stroke-width="3" />
-                  <line y1="15.5" x2="24" y2="15.5" stroke="#EC1F3E" stroke-width="3" />
-                </svg> */}
                 <Image
                   src={close}
                   alt={`number-icon`}
