@@ -1,9 +1,25 @@
-import CountUp from 'react-countup';
+import CountUp, { useCountUp } from 'react-countup';
 import theme from "../../../styles/theme"
 
 export default function Average() {
+
+  useCountUp({
+    ref: "countries",
+    start: 0,
+    end: 12,
+    useEasing: true,
+    enableScrollSpy: true,
+  });
+
+  useCountUp({
+    ref: "workers",
+    start: 45950,
+    end: 45000,
+    enableScrollSpy: true,
+  });
+
   return (
-    <>  
+    <>
       <div className="averageBox">
         <div className="contentBox">
 
@@ -13,15 +29,19 @@ export default function Average() {
 
           <div className="line"></div>
 
-          <div className="block">
-            <h1><CountUp start={0} end={12} duration={2} />+</h1>
+          <div className="content1">
+            <div className="block1">
+              <h1 id='countries'><CountUp start={0} end={12} duration={2} enableScrollSpy /></h1> <h1>+</h1>
+            </div>
             <p>Países</p>
           </div>
 
           <div className="line"></div>
 
-          <div className="block">
-            <h1><CountUp start={44950} end={45000} duration={2} />+</h1>
+          <div className="content2">
+            <div className="block2">
+              <h1 id='workers'><CountUp start={44950} end={45000} duration={2} enableScrollSpy />+</h1> <h1>+</h1>
+            </div>
             <p>Trabajadores/as</p>
           </div>
         </div>
@@ -60,10 +80,27 @@ export default function Average() {
                   letter-spacing: 0.02em;
                 }
               }
-              .block{
+              .block1{
+                width: 100px;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: flex-start;
+              
+                .countBox{
+                  display: flex;
+                  justify-content: flex-end;
+                  flex-direction: row;
+                  gap: 15px;
+
+                  .singBox{
+                  }
+                }
+              }
+              .block2{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                width: 270px;
               
                 .countBox{
                   display: flex;

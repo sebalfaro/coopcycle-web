@@ -50,16 +50,19 @@ export default function ContactUs() {
                 align-items: center;
                 justify-content: center;
                 left: 20%;
-                bottom: 30%;
+                bottom: 15%;
                 width: 59px;
                 height: 59px;
                 border-radius: 50px;
                 border: none;
                 background-color: ${theme.colors.lightSecondary};
                 z-index: 30;
+                transition: 0.5s all;
 
                 &:hover{
                   cursor: pointer;
+                  border: 1px solid ${theme.colors.lightSecondary};
+                  background-color: ${theme.colors.white};
                 }
               }
             }
