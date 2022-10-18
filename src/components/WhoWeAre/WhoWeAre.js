@@ -3,7 +3,7 @@ import Image from "next/image"
 import Facttic from "../../../common/components/icons/Facttic"
 import logos from "../../../common/assets/images/logos/logos"
 import theme from "../../../styles/theme"
-import logo from '../../../common/assets/images/logos/1.DIPAC_final.svg'
+import inaes from '../../../common/assets/images/logos/5. INAES_final.png'
 import Dipac from "../../../common/assets/images/logos/Dipac"
 import Rus from "../../../common/assets/images/logos/Rus"
 
@@ -36,7 +36,7 @@ export default function nWhoWeAre() {
             <div className="line"></div>
             <div className="logos">
               <Image
-                src={logos.line1.logo2}
+                src={inaes}
                 alt={`number-icon`}
                 layout="fill"
                 objectFit="contain"

@@ -32,7 +32,7 @@ const Rus = () => {
   <style jsx>
     {`
       .st0{
-        fill: #00b0c7;
+
       }
     `}
   </style>

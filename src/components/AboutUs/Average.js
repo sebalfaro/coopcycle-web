@@ -1,7 +1,19 @@
+import { useEffect, useState } from 'react';
 import CountUp, { useCountUp } from 'react-countup';
 import theme from "../../../styles/theme"
 
 export default function Average() {
+
+  // const [position, setPosition] = useState(false);
+  // const scroll = window.scrollY;
+  // console.log(scroll);
+
+  // useEffect(() => {
+  //   if(scroll === 1000){
+  //     setPosition(true)
+  //   }
+  // }, [scroll])
+  
 
   useCountUp({
     ref: "countries",
@@ -16,6 +28,7 @@ export default function Average() {
     start: 45950,
     end: 45000,
     enableScrollSpy: true,
+    useEasing: true,
   });
 
   return (
