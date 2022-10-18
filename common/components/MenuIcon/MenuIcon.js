@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import theme from '../../../styles/theme'
 import close from '../../assets/images/HamburgerIcon.svg'
+import HamburgerIcon from '../icons/HamburguerIcon'
 
 export default function MenuIcon({ open, clickHandler }) {
   return <>
@@ -12,13 +13,7 @@ export default function MenuIcon({ open, clickHandler }) {
             <div className={(open ? 'iconMenu' + ' ' + 'close' : 'iconMenu' + ' ' + 'open')} onClick={clickHandler}>
 
               <div className="closeMenuIcon" onClick={clickHandler}>
-                <Image
-                  src={close}
-                  alt={`number-icon`}
-                  layout="fill"
-                  objectFit="contain"
-                  priority
-                />
+                <HamburgerIcon />
               </div>
             </div>
 

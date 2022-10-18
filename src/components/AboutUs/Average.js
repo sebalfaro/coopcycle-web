@@ -3,7 +3,7 @@ import theme from "../../../styles/theme"
 
 export default function Average() {
   return (
-    <>
+    <>  
       <div className="averageBox">
         <div className="contentBox">
 

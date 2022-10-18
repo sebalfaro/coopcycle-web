@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "../../../common/components/Button/Button";
 import Card from "../../../common/components/Card/Card";
-import Card2 from "../../../common/components/Card/Card 2";
 import { cardsInfo } from "../../../common/assets/data/cardsInfo"
 
 

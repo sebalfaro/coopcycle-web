@@ -108,7 +108,7 @@ export default function SideBar() {
             flex-direction: row;
             background-color: ${theme.colors.secondary};
             width: 100%;
-            z-index: 30;
+            z-index: 40;
           }
           .menuBtnBoxClose{
             margin-left: 22px;

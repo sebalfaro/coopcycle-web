@@ -27,9 +27,9 @@ export default function Card({ title, intro, info, img, items }) {
               <div className="itemsBox">
                 <ul>
                   {
-                    items.map(e => {
+                    items.map((e, index) => {
                       return (
-                        <li key={e + 'key'}>{e}</li>
+                        <li key={e + 'key' + index}>{e}</li>
                       )
                     })
                   }
@@ -117,7 +117,7 @@ export default function Card({ title, intro, info, img, items }) {
                 }
               }
               .textBoxOpen{
-                height: 70%;
+                height: 80%;
               }
             }
             .contentBoxOpen{

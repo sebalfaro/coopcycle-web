@@ -4,6 +4,8 @@ import Facttic from "../../../common/components/icons/Facttic"
 import logos from "../../../common/assets/images/logos/logos"
 import theme from "../../../styles/theme"
 import logo from '../../../common/assets/images/logos/1.DIPAC_final.svg'
+import Dipac from "../../../common/assets/images/logos/Dipac"
+import Rus from "../../../common/assets/images/logos/Rus"
 
 export default function nWhoWeAre() {
 
@@ -68,23 +70,11 @@ export default function nWhoWeAre() {
           <p>NOS ACOMPAÑAN</p>
           <div className="imgsBox">
             <div className="logos">
-              <Image
-                src={'/images/1.DIPAC_final.svg'}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
+              <Dipac fill='#00b0c7'/>
             </div>
             <div className="line"></div>
             <div className="logos">
-              <Image
-                src={'/images/rus.svg'}
-                alt={`number-icon`}
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
+              <Rus fill='#00b0c7'/>
             </div>
             <div className="line"></div>
             <div className="logos">

@@ -3,7 +3,7 @@ import CustomInput from '../../components/CustomInput/CustonInput'
 import CustomTexA from '../CustomTextA/CustomTextA'
 import Button from '../Button/Button'
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
-import { FORM_VALIDATION_MESSAGES, nameSchema, emailSchema, str1to1024schema, senderSchema } from '../../constants/schema/schema'
+import { nameSchema, emailSchema, str1to1024schema, senderSchema } from '../../constants/schema/schema'
 import * as Yup from 'yup'
 
 export default function ContactForm() {
@@ -23,13 +23,14 @@ export default function ContactForm() {
     sender: ''
   }
 
-  const handlerSubmit = async ({ name, mail, message, sender }) => {
+  const handlerSubmit = async (values, ) => {
+
     const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
-        email: mail,
-        fullname: name,
-        subject: sender,
-        message: message,
+        email: values.mail,
+        name: values.name,
+        subject: values.sender,
+        message: values.message,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -57,11 +58,16 @@ export default function ContactForm() {
     <>
       <Formik
         initialValues={data}
-        onSubmit={(values, actions) => {
+        onSubmit={(values, { setSubmitting, resetForm, setTouched, setErrors }) => {
 
-          // console.log('submited', { values })
+
           handlerSubmit(values)
-          // actions.resetForm()
+          alert('Formulario enviado con exito')
+          resetForm({ values: data })
+          setSubmitting(false);
+          setTouched({}, false);
+          setErrors({})
+
         }}
         validationSchema={Yup.object().shape({
           name: nameSchema,
@@ -77,10 +83,10 @@ export default function ContactForm() {
             <div className="formBox">
               <div className="inputBox">
                 <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' errors={props.errors} touched={props.touched} />
-                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' errors={props.errors} touched={props.touched}/>
+                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' errors={props.errors} touched={props.touched} />
                 <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' errors={props.errors} touched={props.touched} />
                 <br />
-                <SubmitBtn type='submit' text='Submit' onClickHandler={props.submitForm} />
+                <SubmitBtn type='submit' text='Enviar Mensaje' onClickHandler={props.handleSubmit} />
               </div>
               <div className="submitBox">
                 <p>Motivo del contacto</p>

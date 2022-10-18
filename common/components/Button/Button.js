@@ -4,6 +4,8 @@ import arrow2 from '../../assets/images/arrow2.svg'
 import theme from "../../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
+import Arrow1 from "../icons/Arrow1";
+import Arrow2 from "../icons/Arrow2";
 
 export default function Button({ text = "", altText = "", path = "#form", onClickHandler, type = 'right', value, formikProps }) {
 
@@ -50,13 +52,7 @@ export default function Button({ text = "", altText = "", path = "#form", onClic
                   {
                     type === 'right' && (
                       <div className="btn1-icon">
-                        <Image
-                          src={arrow1}
-                          alt={`btn1-icon`}
-                          layout="fill"
-                          objectFit="contain"
-                          priority
-                        />
+                        <Arrow1 />
                       </div>
                     )
                   }
@@ -73,15 +69,11 @@ export default function Button({ text = "", altText = "", path = "#form", onClic
                   ? <p>{altText}</p>
                   : (
                     <>
-                      <p>{text}</p>
-                      <div className="openBtn-icon">
-                        <Image
-                          src={arrow2}
-                          alt={`btn2-icon`}
-                          layout="fill"
-                          objectFit="contain"
-                          priority
-                        />
+                      <div className="wrapArrow2">
+                        <p>{text}</p>
+                        <div className="openBtn-icon">
+                          <Arrow2 />
+                        </div>
                       </div>
                     </>
                   )
@@ -183,11 +175,20 @@ export default function Button({ text = "", altText = "", path = "#form", onClic
               transition: 0.7s;
             }
 
-            .openBtn-icon{
-              width: 0;
-              height: 0;
-              position: relative;
-              transition: 0.5s; 
+            .wrapArrow2{
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: center;
+              width: 100%;
+
+              .openBtn-icon{
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                position: relative;
+                transition: 0.5s; 
+              }
             }
 
 
@@ -196,10 +197,13 @@ export default function Button({ text = "", altText = "", path = "#form", onClic
               cursor: pointer;
               border: 1px solid ${theme.colors.lightSecondary};
 
-              .openBtn-icon{
-                width: 12px;
-                height: 12px;
-                position: relative;
+              .wrapArrow2{
+                gap: 10px;
+                .openBtn-icon{
+                  width: 12px;
+                  height: 12px;
+                  position: relative;
+                }
               }
             }
           }
