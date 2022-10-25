@@ -8,7 +8,7 @@ export default function BeCoopCycle() {
 
   return (
     <>
-      <section className="beCoopBox">
+      <section id="sumate" className="beCoopBox">
         <h1>¡Quiero ser Coopcycle!</h1>
 
         <div className="cardsBox">
@@ -28,16 +28,17 @@ export default function BeCoopCycle() {
             flex-direction: column;
             align-items: center;
             width: 100%;
-            min-height: 100vh;
 
             h1{
-              padding-top: 5rem;
+              margin-top: 5rem;
             }
+
             h4 {
               text-align: center;
               padding-bottom: 22px;
             }
             .cardsBox{
+              min-height: 400px;
               width: 100%;
               display: flex;
               flex-direction: row;

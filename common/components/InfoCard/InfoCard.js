@@ -13,19 +13,19 @@ export default function InfoCard({ number, title, content }) {
     <>
       <div className={"infoCardBox" + ' ' + (open ? 'infoCardBoxOpen' : 'infoCardBoxClose')}>
         <div className="numberBox">
-          {number}
+          <b>{number}</b> 
         </div>
 
         <div className="mainContentBox">
           <div className="titleBox"><h3>{title}</h3></div>
-          <div className="content">{content}</div>
+          <div className="content"><p className="p2">{content}</p></div>
 
         </div>
         <div className="openBtnBox">
           {
             open
-              ? <button onClick={onClickHandler} >-</button>
-              : <button onClick={onClickHandler}>+</button>
+              ? <button onClick={onClickHandler} ><b>-</b></button>
+              : <button onClick={onClickHandler} ><b>+</b></button>
           }
         </div>
       </div>
@@ -43,7 +43,6 @@ export default function InfoCard({ number, title, content }) {
             gap: 30px;
 
             .numberBox{
-              font-weight: bolder;
               color: rgba(9, 46, 55, 0.5);
               border-left: 1px solid rgba(9, 46, 55, 0.5);
               display: flex;
@@ -51,13 +50,14 @@ export default function InfoCard({ number, title, content }) {
               justify-content: flex-end;
               width: 40px;
               height: 100%;
+              padding-top: 2.5px;
             }
 
             .mainContentBox{
               display: flex;
               flex-direction: column;
-              width: 300px;
-              gap: 13px;
+              width: 355px;
+              gap: 10px;
 
               .titleBox{
                 display: flex;
@@ -74,15 +74,16 @@ export default function InfoCard({ number, title, content }) {
             button {
               background-color: transparent;
               border: none;
-              color: ${theme.colors.secondary};
+              color: ${theme.colors.third};
               font-size: 1rem; 
               &:hover {
                 cursor: pointer;
               }
             }
           }
+
           .infoCardBoxOpen{
-            height: 130px;
+            height: 120px;
 
             .numberBox{
               border-left: 1.6px solid ${theme.colors.lightSecondary};

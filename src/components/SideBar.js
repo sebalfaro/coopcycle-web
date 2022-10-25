@@ -3,12 +3,6 @@ import { useState } from "react"
 import SocialMediaLink from "../../common/components/SocialMediaLink/SocialMediaLink"
 import BarLink from '../../common/components/NavLink/BarLink'
 import MenuIcon from "../../common/components/MenuIcon/MenuIcon";
-import tw from '../../common/assets/images/tw-blue.svg'
-import igBlue from '../../common/assets/images/ig-blue.svg'
-import fb from '../../common/assets/images/fb-blue.svg'
-import fbIcon from '../../public/images/fb-icon.svg'
-import twIcon from '../../public/images/tw-icon.svg'
-import igIcon from '../../public/images/ig-icon.svg'
 import one from '../../common/assets/images/numbers/01.svg'
 import two from '../../common/assets/images/numbers/02.svg'
 import three from '../../common/assets/images/numbers/03.svg'
@@ -16,7 +10,6 @@ import four from '../../common/assets/images/numbers/04.svg'
 import five from '../../common/assets/images/numbers/05.svg'
 import closeBtn from '../../common/assets/images/closeIcon.svg'
 import theme from "../../styles/theme"
-
 
 export default function SideBar() {
   const [open, setOpen] = useState(false)
@@ -36,9 +29,9 @@ export default function SideBar() {
 
                 <div className="socialMediaLinksBoxClose">
                   <div className={"socialMediaIconsBox" + ' ' + (open ? 'close' : 'open')}>
-                    <SocialMediaLink icon={fb} name={'facebook'} size={'22'} />
-                    <SocialMediaLink icon={tw} name={'twitter'} size={'22'} />
-                    <SocialMediaLink icon={igBlue} name={'instagram'} size={'22'} />
+                    <SocialMediaLink iconType={'facebook'} filled={false} />
+                    <SocialMediaLink iconType={'twitter'} filled={false} />
+                    <SocialMediaLink iconType={'instagram'} filled={false} />
                   </div>
                 </div>
               </>
@@ -51,11 +44,11 @@ export default function SideBar() {
                   </div>
 
                   <div className="column1Links">
-                    <BarLink title="¿Qué es Coopcycle?" number={one} link='#' clickHandler={clickHandler} />
-                    <BarLink title="¡Sumate!" number={three} link='#' clickHandler={clickHandler} />
-                    <BarLink title="Derechos" number={two} link='#' clickHandler={clickHandler} />
-                    <BarLink title="¿Quienes somos?" number={four} link='#' clickHandler={clickHandler} />
-                    <BarLink title="Contacto" number={five} link='#' clickHandler={clickHandler} />
+                    <BarLink title="¿Qué es Coopcycle?" number={one} link='#que-es-coopcycle' clickHandler={clickHandler} />
+                    <BarLink title="¡Sumate!" number={three} link='#sumate' clickHandler={clickHandler} />
+                    <BarLink title="Derechos" number={two} link='#derechos' clickHandler={clickHandler} />
+                    <BarLink title="¿Quienes somos?" number={four} link='#quienes-somos' clickHandler={clickHandler} />
+                    <BarLink title="Contacto" number={five} link='#form' clickHandler={clickHandler} />
                   </div>
 
                 </div>
@@ -64,11 +57,11 @@ export default function SideBar() {
                   <div className="socialMediaBoxOpen">
                     <h4>¡SEGUINOS!</h4>
                     <div className={"socialMediaLinksBox" + ' ' + (open ? 'open' : 'close')}>
-                      <SocialMediaLink icon={igIcon} name={'instagram'} size={'18'} />
+                      <SocialMediaLink iconType={'instagram'} filled />
                       <p>|</p>
-                      <SocialMediaLink icon={fbIcon} name={'facebook'} size={'18'} />
+                      <SocialMediaLink iconType={'facebook'} filled />
                       <p>|</p>
-                      <SocialMediaLink icon={twIcon} name={'twitter'} size={'18'} />
+                      <SocialMediaLink iconType={'twitter'} filled />
                     </div>
                   </div>
                 </div>
@@ -76,13 +69,13 @@ export default function SideBar() {
                 <div className="column3">
                   <div className="closeBtnBox">
                     <div className="closeBtn" onClick={clickHandler} >
-                        <Image
-                          src={closeBtn}
-                          alt={`number-icon`}
-                          layout="fill"
-                          objectFit="contain"
-                          priority
-                        />
+                      <Image
+                        src={closeBtn}
+                        alt={`number-icon`}
+                        layout="fill"
+                        objectFit="contain"
+                        priority
+                      />
                     </div>
                   </div>
 
@@ -115,7 +108,7 @@ export default function SideBar() {
             flex-direction: row;
             background-color: ${theme.colors.secondary};
             width: 100%;
-            z-index: 30;
+            z-index: 40;
           }
           .menuBtnBoxClose{
             margin-left: 22px;

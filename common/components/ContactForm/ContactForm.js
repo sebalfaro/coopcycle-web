@@ -3,7 +3,7 @@ import CustomInput from '../../components/CustomInput/CustonInput'
 import CustomTexA from '../CustomTextA/CustomTextA'
 import Button from '../Button/Button'
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
-import { FORM_VALIDATION_MESSAGES, nameSchema, emailSchema, str1to1024schema, senderSchema } from '../../constants/schema/schema'
+import { nameSchema, emailSchema, str1to1024schema, senderSchema } from '../../constants/schema/schema'
 import * as Yup from 'yup'
 
 export default function ContactForm() {
@@ -23,32 +23,36 @@ export default function ContactForm() {
     sender: ''
   }
 
-  const handlerSubmit = async ({ name, mail, message, sender }) => {
-    const res = await fetch("/api/sendgrid", {
-      body: JSON.stringify({
-        email: mail,
-        fullname: name,
-        subject: sender,
-        message: message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+  const handlerSubmit = async (values) => {
 
-    const { error } = await res.json();
-    if (error) {
-      console.log(error);
-      // setShowSuccessMessage(false);
-      // setShowFailureMessage(true);
-      // setButtonText("Send");
-      return;
+    const data = {
+      email: values.mail,
+      name: values.name,
+      subject: values.sender,
+      message: values.message,
     }
-    // setShowSuccessMessage(true);
-    // setShowFailureMessage(false);
-    // setButtonText("Send");
-    // console.log(name, mail, sender, message);
+
+    const body = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch('/api/smtp', body)
+      .then((res) => {
+        console.log('Response received', res)
+        if (res.status === 200) {
+          alert('El formulario fue enviado con éxito')
+        }
+      })
+      .catch(err => {
+        console.log({ err })
+        alert('Ah ocurrido un error!')
+      })
+
   }
 
 
@@ -57,11 +61,13 @@ export default function ContactForm() {
     <>
       <Formik
         initialValues={data}
-        onSubmit={(values, actions) => {
-
-          // console.log('submited', { values })
+        onSubmit={(values, { setSubmitting, resetForm, setTouched, setErrors }) => {
+          // e.preventDefault();
           handlerSubmit(values)
-          // actions.resetForm()
+          resetForm({ values: data })
+          setSubmitting(false);
+          setTouched({}, false);
+          setErrors({})
         }}
         validationSchema={Yup.object().shape({
           name: nameSchema,
@@ -76,11 +82,11 @@ export default function ContactForm() {
           <Form>
             <div className="formBox">
               <div className="inputBox">
-                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' placeholder="Nombre" errors={props.errors} touched={props.touched} />
-                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' placeholder="Mail" errors={props.errors} touched={props.touched}/>
-                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' placeholder="Tu mensaje" errors={props.errors} touched={props.touched} />
+                <Field name="name" as={CustomInput} label='¿Cúal es tu nombre?' errors={props.errors} touched={props.touched} />
+                <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' errors={props.errors} touched={props.touched} />
+                <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' errors={props.errors} touched={props.touched} />
                 <br />
-                <SubmitBtn type='submit' text='Submit' onClickHandler={props.submitForm} />
+                <SubmitBtn type='submit' text='Enviar Mensaje' onClickHandler={props.handleSubmit} />
               </div>
               <div className="submitBox">
                 <p>Motivo del contacto</p>
@@ -105,19 +111,18 @@ export default function ContactForm() {
       <style jsx>
         {`
           .formBox{
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            column-gap: 2rem;
             width: 100%;
             height: 100%;
-            gap: 20px;
 
             .inputBox{
-              width: 50%;
-              height: 100%;
+              grid-column: 1/ span 5;
               gap: 10px;
             }
             .submitBox{
-              width: 45%;
+              grid-column: 6/ span 5;
               height: 100%;
 
               .btnsBox{

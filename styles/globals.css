@@ -1,5 +1,6 @@
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: "Space Grotesk";
@@ -15,14 +16,30 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
-h1{
+
+h1 {
   font-family: 'Passion One';
   font-weight: 900;
   font-size: 2.5rem;
   line-height: 2.75rem;
 }
 
-h4{
+h2 {
+  font-family: 'Passion One';
+  font-weight: 900;
+  font-size: 1.875rem;
+  line-height: 1.625rem;
+}
+
+h3 {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+
+h4 {
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 700;
@@ -30,7 +47,7 @@ h4{
   line-height: 1.438rem;
 }
 
-.box{
+.box {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2rem;
@@ -38,12 +55,35 @@ h4{
   padding: 0 2rem;
 }
 
+.p2 {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: #092E37;
-    background:#F5F5F5;
+    background: #F5F5F5;
+  }
+}
+
+@media (max-width: 64em) {
+  .box{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+      "first first first first first first"
+      "second second second second second second"
+      ;
+    column-gap: 1rem;
+    padding: 0 1rem;
   }
 }

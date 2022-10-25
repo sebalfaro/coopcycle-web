@@ -27,9 +27,9 @@ export default function Card({ title, intro, info, img, items }) {
               <div className="itemsBox">
                 <ul>
                   {
-                    items.map(e => {
+                    items.map((e, index) => {
                       return (
-                        <li key={e + 'key'}>{e}</li>
+                        <li key={e + 'key' + index}>{e}</li>
                       )
                     })
                   }
@@ -37,7 +37,7 @@ export default function Card({ title, intro, info, img, items }) {
               </div>
             </div>
           </div>
-          <Button text="VER MÁS" type="open" onClickHandler={setOpen} value={open} />
+          <Button text="VER MÁS" altText="VER MENOS" type="open" onClickHandler={setOpen} value={open} />
         </div>
       </div>
       <style jsx>
@@ -59,9 +59,10 @@ export default function Card({ title, intro, info, img, items }) {
               display: flex;
               flex-direction: column;
               align-items: center;
+              justify-content: space-between;
               margin-top: 75px;
               width: 308px;
-              height: 309px;
+              height: 315px;
               box-shadow: 9px 7px 16px -1px rgba(0, 0, 0, 0.25);
               border-radius: 100px 100px 40px 40px;
               gap: 20px;
@@ -83,15 +84,15 @@ export default function Card({ title, intro, info, img, items }) {
                   flex-direction: column;
                   align-items: center;
                   height: 150px;
-                  width: 243px;
-                  
-                  
+                  width: 85%;
+                                    
                   .title{
                     color: ${theme.colors.third};
                     margin-bottom: 1rem;
                   } 
                 
                   .introBox{
+                    line-height: 22px;
                     text-align: center;
                     font-size: 0.92rem; 
                   }
@@ -116,7 +117,7 @@ export default function Card({ title, intro, info, img, items }) {
                 }
               }
               .textBoxOpen{
-                height: 70%;
+                height: 80%;
               }
             }
             .contentBoxOpen{

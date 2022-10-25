@@ -1,7 +1,6 @@
-import Image from "next/image"
-import logo from "../../common/assets/images/LogoCoopcycle.svg"
 import Lottie from "lottie-react";
 import img1 from '../../common/assets/images/svgImages/Hero completo_V4.json'
+import LogoCoopCycle from "../../common/assets/images/logos/LogoCoopCycle";
 
 export default function Hero() {
   return (
@@ -9,13 +8,7 @@ export default function Hero() {
       <section className="heroBox">
         <div className="logoBox">
           <div className="logo">
-            <Image
-              src={logo}
-              alt={`number-icon`}
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
+            <LogoCoopCycle />
           </div>
         </div>
         <div className="titleBox">

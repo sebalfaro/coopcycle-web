@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import WhoWeAre from '../src/components/WhoWeAre/WhoWeAre'
 import AboutUs from '../src/components/AboutUs/AboutUs'
 import Alternative from '../src/components/Alternative/Alternative'
@@ -10,6 +9,7 @@ import SideBar from '../src/components/SideBar'
 import ContactUs from '../src/components/ContactUs/ContactUs'
 import AboutUsGrid from '../src/components/AboutUs/AboutUsGrid'
 import AlternativeGrid from '../src/components/Alternative/AlternativeGrid'
+import Resources from '../src/components/Resources/Resources'
 
 export default function Home() {
   return (
@@ -29,6 +29,7 @@ export default function Home() {
           <BeCoopCycle />
           {/* <Alternative /> */}
           <AlternativeGrid />
+          <Resources /> 
           <WhoWeAre />
           <ContactUs />
         </main>

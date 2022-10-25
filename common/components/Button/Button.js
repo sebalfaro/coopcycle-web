@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import arrow1 from '../../assets/images/arrow1.svg'
+import arrow2 from '../../assets/images/arrow2.svg'
 import theme from "../../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
+import Arrow1 from "../icons/Arrow1";
+import Arrow2 from "../icons/Arrow2";
 
-export default function Button({ text = "", onClickHandler, type = 'right', value, formikProps }) {
+export default function Button({ text = "", altText = "", path = "#form", onClickHandler, type = 'right', value, formikProps }) {
 
   const [selected, setSelected] = useState(false);
 
@@ -49,13 +52,7 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
                   {
                     type === 'right' && (
                       <div className="btn1-icon">
-                        <Image
-                          src={arrow1}
-                          alt={`btn1-icon`}
-                          layout="fill"
-                          objectFit="contain"
-                          priority
-                        />
+                        <Arrow1 />
                       </div>
                     )
                   }
@@ -64,26 +61,59 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             </a>
           </Link>
         )
-        :(
-          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
-          <div className="wrap">
-            {text}
-            {
-              type === 'right' && (
-                <div className="btn1-icon">
-                  <Image
-                    src={arrow1}
-                    alt={`btn1-icon`}
-                    layout="fill"
-                    objectFit="contain"
-                    priority
-                  />
-                </div>
+          :
+          type === 'open' ? (
+            <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+              {
+                value
+                  ? <p>{altText}</p>
+                  : (
+                    <>
+                      <div className="wrapArrow2">
+                        <p>{text}</p>
+                        <div className="openBtn-icon">
+                          <Arrow2 />
+                        </div>
+                      </div>
+                    </>
+                  )
+              }
+            </button>
+          )
+            :
+            type === 'center'
+              ? (
+                <Link href={path} scroll={false}>
+                  {
+                    path === '#form'
+                      ? (
+                        <a >
+                          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                            <div className="wrap">
+                              {text}
+                            </div>
+                          </button>
+                        </a>
+                      )
+                      : (
+                        <a target="_blank" rel='noopener noreferrer'>
+                          <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                            <div className="wrap">
+                              {text}
+                            </div>
+                          </button>
+                        </a>
+                      )
+                  }
+                </Link>
               )
-            }
-          </div>
-        </button>
-        )
+              : (
+                <button className={type + ' ' + (selected ? 'selected' : null)} onClick={clickHandler} >
+                  <div className="wrap">
+                    {text}
+                  </div>
+                </button>
+              )
       }
       <style jsx>
         {`
@@ -121,8 +151,13 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
               }
             }
           }
+
           .open{
-            width: 101px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 82px;
             height: 29px;
             border: 1px solid ${theme.colors.lightSecondary};
             border-radius: 40px;
@@ -130,19 +165,49 @@ export default function Button({ text = "", onClickHandler, type = 'right', valu
             color: ${theme.colors.secondary};
             font-family: 'Space Grotesk';
             font-weight: 700;
-            font-size: 11px;
+            font-size: 0.688rem;
             line-height: 1rem;
             transition: 0.7s;
             margin-bottom: 30px;
+            gap: 6px;
+
+            p {
+              transition: 0.7s;
+            }
+
+            .wrapArrow2{
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: center;
+              width: 100%;
+
+              .openBtn-icon{
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                position: relative;
+                transition: 0.5s; 
+              }
+            }
 
 
             &:hover{
+              width: 101px;
               cursor: pointer;
-              background-color: ${theme.colors.secondary};
-              color: ${theme.colors.white};
-              border: none;
+              border: 1px solid ${theme.colors.lightSecondary};
+
+              .wrapArrow2{
+                gap: 10px;
+                .openBtn-icon{
+                  width: 12px;
+                  height: 12px;
+                  position: relative;
+                }
+              }
             }
           }
+
           .center{
             display: flex;
             flex-direction: row;

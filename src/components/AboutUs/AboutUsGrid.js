@@ -2,11 +2,12 @@ import Button from "../../../common/components/Button/Button";
 import Average from "./Average";
 import Lottie from "lottie-react";
 import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
+import theme from "../../../styles/theme";
 
 export default function AboutUsGrid() {
   return (
     <>
-      <section className="aboutUsBox">
+      <section id="que-es-coopcycle" className="aboutUsBox">
         <div className="box">
           <div className="imgBox">
             <Lottie loop={true} animationData={img1} style={{ height: '100%' }} />
@@ -18,6 +19,7 @@ export default function AboutUsGrid() {
             <p>Las experiencias en distintas partes de Europa demuestra que es una <b> verdadera alternativa a las plataformas privadas </b> que precarizan el trabajo y monopolizan la oferta.</p>
             <Button text="Conocer más" />
           </div>
+
         </div>
         <div className="avarageBox">
           <Average />
@@ -27,13 +29,19 @@ export default function AboutUsGrid() {
         {`
           .aboutUsBox{
             width: 100%;
-            height: 100vh;
 
               .imgBox {
                 position: relative;
                 grid-column: 2/ span 5;
                 align-self: start;
                 height: 590px;
+
+                @media (max-width: ${theme.breakPoints.screenMd}) {
+                  grid-column-start: second; 
+                  grid-column-end: second;
+                  grid-row-start: second;
+                  grid-row-end: second; 
+                }
               }
 
               .textBox{
@@ -47,10 +55,18 @@ export default function AboutUsGrid() {
                   margin-bottom: 1.5rem;
                   line-height: 1.9rem;
                 }
+
+                @media (max-width: ${theme.breakPoints.screenMd}) {
+                  grid-column-start: first; 
+                  grid-column-end: first; 
+                  grid-row-start: first;
+                  grid-row-end: first;
+                }
               }
 
             .avarageBox{
                 width: 100%;
+                margin-top: 4rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;

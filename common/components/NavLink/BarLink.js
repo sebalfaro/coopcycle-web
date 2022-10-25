@@ -15,7 +15,7 @@ export default function BarLink({ title = '', link = '#', number, clickHandler }
         />
       </div>
       <div className="textBox" onClick={clickHandler}>
-        <Link href={link}>
+        <Link href={link} prefetch={false}>
           <a><h1>{title}</h1></a>
         </Link>
       </div>
