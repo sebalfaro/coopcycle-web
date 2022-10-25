@@ -23,33 +23,36 @@ export default function ContactForm() {
     sender: ''
   }
 
-  const handlerSubmit = async (values, ) => {
+  const handlerSubmit = async (values) => {
 
-    const res = await fetch("/api/sendgrid", {
-      body: JSON.stringify({
-        email: values.mail,
-        name: values.name,
-        subject: values.sender,
-        message: values.message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-    if (error) {
-      console.log(error);
-      // setShowSuccessMessage(false);
-      // setShowFailureMessage(true);
-      // setButtonText("Send");
-      return;
+    const data = {
+      email: values.mail,
+      name: values.name,
+      subject: values.sender,
+      message: values.message,
     }
-    // setShowSuccessMessage(true);
-    // setShowFailureMessage(false);
-    // setButtonText("Send");
-    // console.log(name, mail, sender, message);
+
+    const body = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch('/api/smtp', body)
+      .then((res) => {
+        console.log('Response received', res)
+        if (res.status === 200) {
+          alert('El formulario fue enviado con éxito')
+        }
+      })
+      .catch(err => {
+        console.log({ err })
+        alert('Ah ocurrido un error!')
+      })
+
   }
 
 
@@ -59,15 +62,12 @@ export default function ContactForm() {
       <Formik
         initialValues={data}
         onSubmit={(values, { setSubmitting, resetForm, setTouched, setErrors }) => {
-
-
+          // e.preventDefault();
           handlerSubmit(values)
-          alert('Formulario enviado con exito')
           resetForm({ values: data })
           setSubmitting(false);
           setTouched({}, false);
           setErrors({})
-
         }}
         validationSchema={Yup.object().shape({
           name: nameSchema,

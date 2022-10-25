@@ -75,3 +75,15 @@ h4 {
     background: #F5F5F5;
   }
 }
+
+@media (max-width: 64em) {
+  .box{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+      "first first first first first first"
+      "second second second second second second"
+      ;
+    column-gap: 1rem;
+    padding: 0 1rem;
+  }
+}
