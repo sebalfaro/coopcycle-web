@@ -3,6 +3,7 @@ import Average from "./Average";
 import Lottie from "lottie-react";
 import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
 import theme from "../../../styles/theme";
+import AverageG from "./AverageG";
 
 export default function AboutUsGrid() {
   return (
@@ -21,8 +22,10 @@ export default function AboutUsGrid() {
           </div>
 
         </div>
-        <div className="avarageBox">
-          <Average />
+        <div className="box">
+          <div className="avBox">
+            <AverageG />
+          </div>
         </div>
       </section>
       <style jsx>
@@ -64,13 +67,17 @@ export default function AboutUsGrid() {
                 }
               }
 
-            .avarageBox{
-                width: 100%;
-                margin-top: 4rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .avBox{
+              grid-column: 3/ span 8;
+              margin-top: 2rem;
+              margin-bottom: 4rem;
+              width: 100%;
+
+              @media (max-width: ${theme.breakPoints.screenMd}) {
+                grid-column-start: first; 
+                grid-column-end: first; 
               }
+            }
           }
         `}
       </style>

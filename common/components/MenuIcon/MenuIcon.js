@@ -56,6 +56,9 @@ export default function MenuIcon({ open, clickHandler }) {
           &:hover{
             cursor: pointer;
           }
+          @media (max-width: ${theme.breakPoints.screenMd}) {
+              border-left: none;
+            }
         }
         .iconOpen{
           width: fit-content;
