@@ -48,6 +48,10 @@ export default function BeCoopCycle() {
 
             h1{
               margin-top: 5rem;
+
+              @media (max-width: ${theme.breakPoints.screenSm}) {
+                font-size: 2.4rem;
+              }
             }
 
             h4 {
@@ -60,24 +64,11 @@ export default function BeCoopCycle() {
               overflow: hidden;
               @media (max-width: ${theme.breakPoints.screenSm}) {
                 width: 100%;
-
               }
 
               .swiperBox{
                 overflow:hidden;
-
               }
-              /*
-              min-height: 400px;
-              width: 100%;
-              display: flex;
-              flex-direction: row;
-              align-items: flex-start;
-              justify-content: center;
-              gap: 40px;
-              margin-top: 30px;
-              margin-bottom: 50px;
-              */
             }
           }
         `}

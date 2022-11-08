@@ -41,6 +41,7 @@ export default function Resources (){
 
               .mainContentBox{
                 flex-direction: column;
+                align-items: center;
                 gap: 2rem;
               }
             }
