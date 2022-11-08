@@ -14,6 +14,7 @@ const theme = {
     lightAccent: '#FCE39F'
   },
   breakPoints: {
+    screenXxs: '28em',
     screenXs: '36em',
     screenSm: '48em',
     screenMd: '64em',

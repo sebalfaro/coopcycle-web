@@ -79,6 +79,9 @@ const SwipperGallery = ({ children, loop = true, speed = 2000, layout, h100w100 
             object-fit: cover;
             
           }
+          @media all and (max-width: ${theme.breakPoints.screenXs}) {
+            width: 100%;
+          }
         }
       `}</style>
 

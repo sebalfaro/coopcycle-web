@@ -56,7 +56,7 @@ export default function InfoCard({ number, title, content }) {
             .mainContentBox{
               display: flex;
               flex-direction: column;
-              width: 355px;
+              width: 100%;
               gap: 10px;
 
               .titleBox{

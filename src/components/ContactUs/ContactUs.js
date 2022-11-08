@@ -2,7 +2,7 @@ import ContactForm from "../../../common/components/ContactForm/ContactForm";
 import Arrow4 from "../../../common/components/icons/Arrow4";
 import theme from "../../../styles/theme";
 
-export default function ContactUs() {
+export default function ContactUs() { 
 
   const clickHandler = ()=>{
     window.scroll(0, 0)
@@ -75,6 +75,8 @@ export default function ContactUs() {
 
                 @media all and (max-width: ${theme.breakPoints.screenXs}) {
                   margin-bottom: 15px;
+                  width: 45px;
+                  height: 45px;
                 }
               }
               @media all and (max-width: ${theme.breakPoints.screenXs}) {

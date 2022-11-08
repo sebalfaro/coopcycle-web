@@ -69,12 +69,12 @@ export default function AverageG() {
             column-gap: 2rem;
             width: 100%;
             height: 172px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 69px;  
+
 
             @media (max-width: ${theme.breakPoints.screenMd}) {
               grid-template-columns: repeat(6, 1fr);
               gap: 0;
+              height: auto;
             }
 
 
@@ -82,9 +82,12 @@ export default function AverageG() {
               grid-column: 1 / span 8;
               width: 100%;
               height: 100%;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border-radius: 69px;  
               
               @media (max-width: ${theme.breakPoints.screenMd}) {
-                grid-column: 1 / span 6;
+                grid-column: 2 / span 4;
+                padding: 2rem 0;
               }
 
               .contentBox{
@@ -110,6 +113,7 @@ export default function AverageG() {
                   h2{
                     letter-spacing: 0.02em;
                   }
+
                 }
                 .block1{
                   width: 100px;
@@ -150,14 +154,15 @@ export default function AverageG() {
                 }
 
                 @media (max-width: ${theme.breakPoints.screenMd}) {
-                    gap: 1rem;
-                    
+                    gap: 0;
+                    flex-direction: column;
                     h1 {
                       font-size: 3.25rem;
                     } 
                     .text {
                       h2 {
-                        font-size: 1.25rem;
+                        font-size: 2rem;
+                        text-align: center;
                       }
                     }
                     .block1{
@@ -167,6 +172,9 @@ export default function AverageG() {
                       width: 150px;
                     }
                 }
+
+
+
               }
             }
           }

@@ -58,6 +58,11 @@ export default function AboutUsGrid() {
               margin-top: 2rem;
               margin-bottom: 4rem;
               width: 100%;
+
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                margin-top: 0;
+               margin-bottom: 2rem;
+              }
             }
           }
 
