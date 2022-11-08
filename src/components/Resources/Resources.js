@@ -35,6 +35,15 @@ export default function Resources (){
               align-items: center;
               gap: 4rem;
             }
+
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              grid-column: 2/ span 4;
+
+              .mainContentBox{
+                flex-direction: column;
+                gap: 2rem;
+              }
+            }
           }
         `}
       </style>

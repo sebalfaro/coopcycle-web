@@ -30,11 +30,19 @@ export default function ContactUs() {
             .titleBox{
               grid-column: 2/ span 5;
               margin-top: 4rem;
+
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                grid-column: 1/ span 6;
+              }
             }
               .formBox{
                 grid-column: 2/ span 10;
                 margin-top: 2rem;
                 margin-bottom: 4rem;
+
+                @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                  grid-column: 1/ span 6;
+                }
               }
 
             .buttonBox{
@@ -50,7 +58,7 @@ export default function ContactUs() {
                 align-items: center;
                 justify-content: center;
                 left: 20%;
-                bottom: 15%;
+                bottom: 10%;
                 width: 59px;
                 height: 59px;
                 border-radius: 50px;
@@ -64,6 +72,13 @@ export default function ContactUs() {
                   border: 1px solid ${theme.colors.lightSecondary};
                   background-color: ${theme.colors.white};
                 }
+
+                @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                  margin-bottom: 15px;
+                }
+              }
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                grid-column: 6/ span 1;
               }
             }
 

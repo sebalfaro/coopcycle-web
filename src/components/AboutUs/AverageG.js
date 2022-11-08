@@ -150,7 +150,7 @@ export default function AverageG() {
                 }
 
                 @media (max-width: ${theme.breakPoints.screenMd}) {
-                    gap: 0.5rem;
+                    gap: 1rem;
                     
                     h1 {
                       font-size: 3.25rem;

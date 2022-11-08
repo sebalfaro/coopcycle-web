@@ -29,7 +29,7 @@ export default function Home() {
           <BeCoopCycle />
           {/* <Alternative /> */}
           <AlternativeGrid />
-          <Resources /> 
+          <Resources />
           <WhoWeAre />
           <ContactUs />
         </main>

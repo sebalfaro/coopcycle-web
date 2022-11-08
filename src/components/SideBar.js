@@ -230,6 +230,10 @@ export default function SideBar() {
                 }
               }
             }
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              width: 15%;
+            }
+
           }
 
         `}

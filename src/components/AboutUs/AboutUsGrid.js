@@ -38,13 +38,6 @@ export default function AboutUsGrid() {
                 grid-column: 2/ span 5;
                 align-self: start;
                 height: 590px;
-
-                @media (max-width: ${theme.breakPoints.screenMd}) {
-                  grid-column-start: second; 
-                  grid-column-end: second;
-                  grid-row-start: second;
-                  grid-row-end: second; 
-                }
               }
 
               .textBox{
@@ -58,13 +51,6 @@ export default function AboutUsGrid() {
                   margin-bottom: 1.5rem;
                   line-height: 1.9rem;
                 }
-
-                @media (max-width: ${theme.breakPoints.screenMd}) {
-                  grid-column-start: first; 
-                  grid-column-end: first; 
-                  grid-row-start: first;
-                  grid-row-end: first;
-                }
               }
 
             .avBox{
@@ -72,8 +58,25 @@ export default function AboutUsGrid() {
               margin-top: 2rem;
               margin-bottom: 4rem;
               width: 100%;
+            }
+          }
 
-              @media (max-width: ${theme.breakPoints.screenMd}) {
+          @media all and (max-width: ${theme.breakPoints.screenXs}) {
+            .aboutUsBox{
+          
+              .imgBox {
+                grid-column-start: second; 
+                grid-column-end: second;
+                grid-row-start: second;
+                grid-row-end: second; 
+              }
+              .textBox {
+                grid-column-start: first; 
+                grid-column-end: first; 
+                grid-row-start: first;
+                grid-row-end: first;
+              }
+              .avBox{
                 grid-column-start: first; 
                 grid-column-end: first; 
               }

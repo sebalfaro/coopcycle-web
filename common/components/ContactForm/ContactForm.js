@@ -5,6 +5,7 @@ import Button from '../Button/Button'
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
 import { nameSchema, emailSchema, str1to1024schema, senderSchema } from '../../constants/schema/schema'
 import * as Yup from 'yup'
+import theme from '../../../styles/theme'
 
 export default function ContactForm() {
 
@@ -86,6 +87,7 @@ export default function ContactForm() {
                 <Field name="mail" as={CustomInput} label='¿Cúal es tu correo electrónico?' errors={props.errors} touched={props.touched} />
                 <Field name="message" as={CustomTexA} label='Dejanos tu mensaje' errors={props.errors} touched={props.touched} />
                 <br />
+                <br />
                 <SubmitBtn type='submit' text='Enviar Mensaje' onClickHandler={props.handleSubmit} />
               </div>
               <div className="submitBox">
@@ -120,6 +122,17 @@ export default function ContactForm() {
             .inputBox{
               grid-column: 1/ span 5;
               gap: 10px;
+              
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                grid-column-start: second; 
+                grid-column-end: second;
+                grid-row-start: second;
+                grid-row-end: second;
+
+                grid-column: 1/ span 5;
+                gap: 0;
+                margin-top: 2rem; 
+              }
             }
             .submitBox{
               grid-column: 6/ span 5;
@@ -132,13 +145,34 @@ export default function ContactForm() {
                 flex-wrap: wrap;
                 gap: 16px 14px;
               }
+
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                grid-column-start: first;
+                grid-column-end: first; 
+                grid-row-start: first;
+                grid-row-end: first;
+
+                .btnsBox{
+                  flex-direction: row;
+                  flex-wrap: no-wrap;
+                }
+              }
             }
-          .errorBox{
-            display: block;
-            color: red;
-            padding: 1rem 0; 
-            font-size: 0.8rem;
-          }
+            .errorBox{
+              display: block;
+              color: red;
+              padding: 1rem 0; 
+              font-size: 0.8rem;
+            }
+            @media (max-width: 64em) {
+              grid-template-columns: repeat(6, 1fr);
+              grid-template-areas:
+                "first first first first first first"
+                "second second second second second second"
+              ;
+              column-gap: 1rem;
+              padding: 0;
+            }
           }
         `}
       </style>

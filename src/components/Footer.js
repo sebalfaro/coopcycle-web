@@ -7,9 +7,8 @@ export default function Footer() {
   return (
     <>
       <footer className="footerBox">
+
         <div className="box">
-
-
           <div className="logoBox">
             <CoopcycleLogo />
           </div>
@@ -18,7 +17,7 @@ export default function Footer() {
             <div className="content">
 
               <div className="linksBox">
-                <div className="contactBox">
+                {/* <div className="contactBox">
                   <div className="socialMediaBox">
                     <h4>¡Seguinos!</h4>
                     <div className="socialMediaIconsBox">
@@ -27,10 +26,9 @@ export default function Footer() {
                       <SocialMediaLink iconType={'instagram'} filled={true} />
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="line"></div>
-
                 <nav className="navBox">
                   <Link href="#que-es-coopcycle" >
                     <a>Sobre nosotros/as</a>
@@ -52,7 +50,9 @@ export default function Footer() {
 
             </div>
           </div>
+
         </div>
+
       </footer>
       <style jsx>
         {`
@@ -67,79 +67,104 @@ export default function Footer() {
         .box{
           height: 100%;
         
-        .logoBox{
-          grid-column: 2/ span 5;
-          align-items: end;
-          height: 100%;
-        }
+          .logoBox{
+            grid-column: 2/ span 5;
+            align-items: end;
+            height: 100%;
+            
 
-        .column2{
-          grid-column: 7/ span 5;
-          height: 100%;
-          width: 100%;
-
-          .line{
-            width: 100%;
-            height: 1px;
-            border-bottom: 1px solid ${theme.colors.gray};
-            margin: 0.5rem 0;
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              grid-column: 1/ span 5;
+            }
           }
 
-          .content {
+          .column2{
+            grid-column: 7/ span 5;
             height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
 
-            .linksBox {
-              display: flex; 
-              flex-direction: column;
-              height: 75px;
-
-              hr {
-                background-color: ${theme.colors.midThird};
-                border: 1px solid ${theme.colors.midThird};
-                margin: 1rem 0;
-              }
+            .line{
+              width: 100%;
+              height: 1px;
+              border-bottom: 1px solid ${theme.colors.gray};
+              margin: 0.5rem 0;
             }
 
-            .socialMediaBox{
-              margin-top: 30px;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
+            .content {
+              height: 100%;
               width: 100%;
-              
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin-top: 3rem;
 
-              .socialMediaIconsBox{
-                position: relative;
+              .linksBox {
+                display: flex; 
+                flex-direction: column;
+                height: 75px;
+
+                hr {
+                  background-color: ${theme.colors.midThird};
+                  border: 1px solid ${theme.colors.midThird};
+                  margin: 1rem 0;
+                }
+              }
+
+              .socialMediaBox{
+                margin-top: 30px;
                 display: flex;
-                width: 100px;
-                gap: 20px;
-                margin-bottom: 15px;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                
 
-                .socialMediaIcon{
+                .socialMediaIconsBox{
                   position: relative;
-                  height: 20px;
-                  width: 20px;
+                  display: flex;
+                  width: 100px;
+                  gap: 20px;
+                  margin-bottom: 15px;
+
+                  .socialMediaIcon{
+                    position: relative;
+                    height: 20px;
+                    width: 20px;
+                  }
+                }
+              }
+
+              .navBox{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+                a{
+                  color: ${theme.colors.white};
                 }
               }
             }
 
-            .navBox{
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              width: 100%;
-              height: 100%;
-              a{
-                color: ${theme.colors.white};
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              grid-column: 1/ span 6;
+              margin-top: 0;
+
+              .content{
+                margin-top: 0;
+                height: auto;
+                
+                .linksBox{ 
+                  gap: 1rem; 
+                  
+                  .navBox{
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 0.7rem 3rem;
+                  }
+                }
               }
             }
           }
-          
-        }
         }
       `}
       </style>
