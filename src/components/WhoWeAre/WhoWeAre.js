@@ -143,8 +143,20 @@ export default function nWhoWeAre() {
                   height: 21.9px;
                   border-left: 1px solid ${theme.colors.darkGray};
                 }
+                @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                  width: 90;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                  gap: 30px;
+
+                  .line{
+                    display: none;
+                  }
+                }
               }
             }
+
+
           }
         `}
       </style>

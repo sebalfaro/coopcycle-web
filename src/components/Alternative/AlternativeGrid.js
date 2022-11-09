@@ -2,6 +2,7 @@ import { infoCardsAlternative } from "../../../common/assets/data/infoCardsAlter
 import Lottie from "lottie-react";
 import character2 from '../../../common/assets/images/svgImages/Animacion_Derechos_V2.json'
 import InfoCard from "../../../common/components/InfoCard/InfoCard";
+import theme from "../../../styles/theme";
 
 export default function AlternativeGrid() {
   return (
@@ -46,16 +47,32 @@ export default function AlternativeGrid() {
                   display: flex; 
                   flex-direction: column;
                   gap: 50px;
-                  width: 470px;
 
                   .infoBox{
                     display: flex; 
                     flex-direction: column;
                     width: 100%;
+
+                    @media all and (max-width: ${theme.breakPoints.screenXs}){
+                      
+                    } 
+                  }
+
+                  @media all and (max-width: ${theme.breakPoints.screenXs}){
+                    grid-column-start: first; 
+                    grid-column-end: first; 
+                    grid-row-start: first;
+                    grid-row-end: first;
+
+                    .titleBox{
+                      h1{
+                        font-size: 2rem;
+                      }
+                    }
                   }
                 }
-
               }
+
           }
         `}
       </style>

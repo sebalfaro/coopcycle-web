@@ -17,9 +17,8 @@ export default function InfoCard({ number, title, content }) {
         </div>
 
         <div className="mainContentBox">
-          <div className="titleBox"><h3>{title}</h3></div>
+          <div className="titleBox" onClick={onClickHandler} ><h3>{title}</h3></div>
           <div className="content"><p className="p2">{content}</p></div>
-
         </div>
         <div className="openBtnBox">
           {
@@ -56,7 +55,7 @@ export default function InfoCard({ number, title, content }) {
             .mainContentBox{
               display: flex;
               flex-direction: column;
-              width: 355px;
+              width: 100%;
               gap: 10px;
 
               .titleBox{
@@ -67,6 +66,9 @@ export default function InfoCard({ number, title, content }) {
 
                 h3{
                   color: rgba(9, 46, 55, 0.5);
+                }
+                &:hover{
+                  cursor: pointer;
                 }
               }
             }

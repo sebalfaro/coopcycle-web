@@ -27,13 +27,13 @@ export default function SideBar() {
               <>
                 <MenuIcon open={open} clickHandler={clickHandler} />
 
-                <div className="socialMediaLinksBoxClose">
+                {/* <div className="socialMediaLinksBoxClose">
                   <div className={"socialMediaIconsBox" + ' ' + (open ? 'close' : 'open')}>
                     <SocialMediaLink iconType={'facebook'} filled={false} />
                     <SocialMediaLink iconType={'twitter'} filled={false} />
                     <SocialMediaLink iconType={'instagram'} filled={false} />
                   </div>
-                </div>
+                </div> */}
               </>
             )
             : (
@@ -54,7 +54,7 @@ export default function SideBar() {
                 </div>
 
                 <div className="column2">
-                  <div className="socialMediaBoxOpen">
+                  {/* <div className="socialMediaBoxOpen">
                     <h4>¡SEGUINOS!</h4>
                     <div className={"socialMediaLinksBox" + ' ' + (open ? 'open' : 'close')}>
                       <SocialMediaLink iconType={'instagram'} filled />
@@ -63,7 +63,7 @@ export default function SideBar() {
                       <p>|</p>
                       <SocialMediaLink iconType={'twitter'} filled />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="column3">
@@ -101,6 +101,10 @@ export default function SideBar() {
             background-color: transparent;
             border-left: 1px solid ${theme.colors.gray};
             width: 75px;
+            
+            @media (max-width: ${theme.breakPoints.screenMd}) {
+              border-left: none;
+            }
           }
           .barOpen{
             position: fixed;
@@ -226,6 +230,10 @@ export default function SideBar() {
                 }
               }
             }
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              width: 15%;
+            }
+
           }
 
         `}

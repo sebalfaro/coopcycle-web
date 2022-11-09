@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import WhoWeAre from '../src/components/WhoWeAre/WhoWeAre'
-import AboutUs from '../src/components/AboutUs/AboutUs'
-import Alternative from '../src/components/Alternative/Alternative'
 import BeCoopCycle from '../src/components/BeCoopCycle/BeCoopCycle'
 import Footer from '../src/components/Footer'
 import Hero from '../src/components/Hero'
@@ -24,12 +22,10 @@ export default function Home() {
         <main >
           <SideBar />
           <Hero />
-          {/* <AboutUs /> */}
           <AboutUsGrid />
           <BeCoopCycle />
-          {/* <Alternative /> */}
           <AlternativeGrid />
-          <Resources /> 
+          <Resources />
           <WhoWeAre />
           <ContactUs />
         </main>

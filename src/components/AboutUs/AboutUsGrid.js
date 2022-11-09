@@ -1,8 +1,8 @@
 import Button from "../../../common/components/Button/Button";
-import Average from "./Average";
 import Lottie from "lottie-react";
 import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
 import theme from "../../../styles/theme";
+import AverageG from "./AverageG";
 
 export default function AboutUsGrid() {
   return (
@@ -21,8 +21,10 @@ export default function AboutUsGrid() {
           </div>
 
         </div>
-        <div className="avarageBox">
-          <Average />
+        <div className="box">
+          <div className="avBox">
+            <AverageG />
+          </div>
         </div>
       </section>
       <style jsx>
@@ -35,13 +37,6 @@ export default function AboutUsGrid() {
                 grid-column: 2/ span 5;
                 align-self: start;
                 height: 590px;
-
-                @media (max-width: ${theme.breakPoints.screenMd}) {
-                  grid-column-start: second; 
-                  grid-column-end: second;
-                  grid-row-start: second;
-                  grid-row-end: second; 
-                }
               }
 
               .textBox{
@@ -55,22 +50,41 @@ export default function AboutUsGrid() {
                   margin-bottom: 1.5rem;
                   line-height: 1.9rem;
                 }
-
-                @media (max-width: ${theme.breakPoints.screenMd}) {
-                  grid-column-start: first; 
-                  grid-column-end: first; 
-                  grid-row-start: first;
-                  grid-row-end: first;
-                }
               }
 
-            .avarageBox{
-                width: 100%;
-                margin-top: 4rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .avBox{
+              grid-column: 3/ span 8;
+              margin-top: 2rem;
+              margin-bottom: 4rem;
+              width: 100%;
+
+              @media all and (max-width: ${theme.breakPoints.screenXs}) {
+                margin-top: 0;
+               margin-bottom: 2rem;
               }
+            }
+          }
+
+          @media all and (max-width: ${theme.breakPoints.screenXs}) {
+            .aboutUsBox{
+          
+              .imgBox {
+                grid-column-start: second; 
+                grid-column-end: second;
+                grid-row-start: second;
+                grid-row-end: second; 
+              }
+              .textBox {
+                grid-column-start: first; 
+                grid-column-end: first; 
+                grid-row-start: first;
+                grid-row-end: first;
+              }
+              .avBox{
+                grid-column-start: first; 
+                grid-column-end: first; 
+              }
+            }
           }
         `}
       </style>

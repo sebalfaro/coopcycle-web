@@ -43,9 +43,13 @@ export default function Card({ title, intro, info, img, items }) {
       <style jsx>
         {`
           .cardBox{
-            width: 308px;
+            width: fit-content;
             transition: 0.5s; 
             position: relative;
+            padding: 2rem 0;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
 
             .imgBox{
               position: absolute;
@@ -53,7 +57,7 @@ export default function Card({ title, intro, info, img, items }) {
               height: 153.54px;
               width: 153.54px;
               border-radius: 100%;
-              left: 25%;   
+              left: auto;   
             }
             .contentBox{
               display: flex;

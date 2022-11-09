@@ -8,9 +8,9 @@ export default function Resources (){
         <div className="box">
           <div className="contentBox">
             <div className="mainContentBox">
-              <h1>Recursos <br /> disponibles</h1>
+              <h1>Recursos disponibles <br />para  ser parte del<br /> mundo CoopCycle.</h1>
               <p>Descargá materiales gratuitos <br /> para ser parte del mundo <br /> CoopCycle.</p>
-              <Button text="Descargar" type='center' path="https://www.google.com/intl/es/drive/"/>
+              <Button text="Acceder" type='center' path="https://www.google.com/intl/es/drive/"/>
             </div>
 
           </div>
@@ -34,6 +34,21 @@ export default function Resources (){
               justify-content: center;
               align-items: center;
               gap: 4rem;
+
+              h1 {
+                font-size: 1.7rem;
+                line-height: 1.8rem;
+              }
+            }
+
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              grid-column: 2/ span 4;
+
+              .mainContentBox{
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+              }
             }
           }
         `}
