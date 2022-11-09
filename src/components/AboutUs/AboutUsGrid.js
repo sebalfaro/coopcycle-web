@@ -1,5 +1,4 @@
 import Button from "../../../common/components/Button/Button";
-import Average from "./Average";
 import Lottie from "lottie-react";
 import img1 from '../../../common/assets/images/svgImages/Animacion_Nosotres_V2.json'
 import theme from "../../../styles/theme";

@@ -1,11 +1,9 @@
-import { useState } from "react";
 import Button from "../../../common/components/Button/Button";
 import Card from "../../../common/components/Card/Card";
 import { cardsInfo } from "../../../common/assets/data/cardsInfo"
 
 import SwipperGallery from "../../../common/components/SwipperGallery/SwipperGallery";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
