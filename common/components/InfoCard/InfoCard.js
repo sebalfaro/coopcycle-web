@@ -13,7 +13,7 @@ export default function InfoCard({ number, title, content }) {
     <>
       <div className={"infoCardBox" + ' ' + (open ? 'infoCardBoxOpen' : 'infoCardBoxClose')}>
         <div className="numberBox">
-          <b>{number}</b> 
+          <b>{number}</b>
         </div>
 
         <div className="mainContentBox">
@@ -70,7 +70,9 @@ export default function InfoCard({ number, title, content }) {
                 &:hover{
                   cursor: pointer;
                 }
+
               }
+
             }
 
             button {
@@ -80,6 +82,20 @@ export default function InfoCard({ number, title, content }) {
               font-size: 1rem; 
               &:hover {
                 cursor: pointer;
+              }
+            }
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              height: 3rem;
+              gap: 2rem;
+
+              .mainContentBox{
+
+                .titleBox{
+                  h3{
+                    line-height: 1.3rem;
+                  }
+                }
+                gap: 22px;
               }
             }
           }
@@ -105,6 +121,10 @@ export default function InfoCard({ number, title, content }) {
                 font-weight: bolder; 
                 font-size: 1.2rem;
               }
+            }
+
+            @media all and (max-width: ${theme.breakPoints.screenXs}) {
+              height: 180px;
             }
           }
         `}

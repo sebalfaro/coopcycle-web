@@ -9,7 +9,6 @@ export default function Resources (){
           <div className="contentBox">
             <div className="mainContentBox">
               <h1>Recursos disponibles <br />para  ser parte del<br /> mundo CoopCycle.</h1>
-              <p>Descargá materiales gratuitos <br /> para ser parte del mundo <br /> CoopCycle.</p>
               <Button text="Acceder" type='center' path="https://www.google.com/intl/es/drive/"/>
             </div>
 
@@ -20,7 +19,7 @@ export default function Resources (){
         {`
           .contentBox{
             background-color: ${theme.colors.secondary};
-            grid-column: 3/ span 8;
+            grid-column: 4/ span 6;
             width: 100%;
             border-radius: 30px;
             margin-top: 4rem;
@@ -42,7 +41,7 @@ export default function Resources (){
             }
 
             @media all and (max-width: ${theme.breakPoints.screenXs}) {
-              grid-column: 2/ span 4;
+              grid-column: 1/ span 6;
 
               .mainContentBox{
                 flex-direction: column;
