@@ -29,7 +29,7 @@ export default function Home() {
           <WhoWeAre />
           <ContactUs />
         </main>
-        <Footer />
+          <Footer />
       </div>
       <style jsx>
         {`

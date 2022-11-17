@@ -2,9 +2,9 @@ import ContactForm from "../../../common/components/ContactForm/ContactForm";
 import Arrow4 from "../../../common/components/icons/Arrow4";
 import theme from "../../../styles/theme";
 
-export default function ContactUs() { 
+export default function ContactUs() {
 
-  const clickHandler = ()=>{
+  const clickHandler = () => {
     window.scroll(0, 0)
   }
 
@@ -27,7 +27,11 @@ export default function ContactUs() {
       </section>
       <style jsx>
         {`
+          .contactUsBox{
+            min-heigth: 80vh;
+
             .titleBox{
+
               grid-column: 2/ span 5;
               margin-top: 4rem;
 
@@ -83,7 +87,7 @@ export default function ContactUs() {
                 grid-column: 6/ span 1;
               }
             }
-
+          }
         `}
 
       </style>

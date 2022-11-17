@@ -1,15 +1,15 @@
 import Button from "../../../common/components/Button/Button";
 import theme from "../../../styles/theme";
 
-export default function Resources (){
-  return(
+export default function Resources() {
+  return (
     <>
       <section className="resourcesBox">
         <div className="box">
           <div className="contentBox">
             <div className="mainContentBox">
               <h1>Recursos disponibles <br />para  ser parte del<br /> mundo CoopCycle.</h1>
-              <Button text="Acceder" type='center' path="https://www.google.com/intl/es/drive/"/>
+              <Button text="Acceder" type='center' path="https://www.google.com/intl/es/drive/" />
             </div>
 
           </div>
@@ -17,6 +17,8 @@ export default function Resources (){
       </section>
       <style jsx>
         {`
+          .resourcesBox{
+
           .contentBox{
             background-color: ${theme.colors.secondary};
             grid-column: 4/ span 6;
@@ -50,6 +52,7 @@ export default function Resources (){
               }
             }
           }
+        }
         `}
       </style>
     </>
