@@ -103,6 +103,7 @@ export default function nWhoWeAre() {
       <style jsx>
         {`
           .whoweareBox{
+            min-height: 80vh;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -144,7 +145,7 @@ export default function nWhoWeAre() {
                   border-left: 1px solid ${theme.colors.darkGray};
                 }
                 @media all and (max-width: ${theme.breakPoints.screenXs}) {
-                  width: 90;
+                  width: 90%;
                   justify-content: center;
                   flex-wrap: wrap;
                   gap: 30px;

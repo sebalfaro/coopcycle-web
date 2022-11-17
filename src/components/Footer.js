@@ -62,8 +62,8 @@ export default function Footer() {
           width: 100%;
           height: 224px;
           background-color: ${theme.colors.third};
-        }
-
+          margin-top: auto;
+          
         .box{
           height: 100%;
         
@@ -96,12 +96,15 @@ export default function Footer() {
               display: flex;
               flex-direction: column;
               justify-content: center;
-              margin-top: 3rem;
+              
+
 
               .linksBox {
+                position: relative;
                 display: flex; 
                 flex-direction: column;
                 height: 75px;
+                top: 4rem;
 
                 hr {
                   background-color: ${theme.colors.midThird};
@@ -165,6 +168,7 @@ export default function Footer() {
               }
             }
           }
+        }
         }
       `}
       </style>
