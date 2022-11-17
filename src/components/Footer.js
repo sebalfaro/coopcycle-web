@@ -158,11 +158,15 @@ export default function Footer() {
                 
                 .linksBox{ 
                   gap: 1rem; 
+                  top: 0px;
                   
                   .navBox{
                     flex-wrap: wrap;
                     justify-content: flex-start;
                     gap: 0.7rem 3rem;
+                    line-height: 0.8rem;
+
+
                   }
                 }
               }
